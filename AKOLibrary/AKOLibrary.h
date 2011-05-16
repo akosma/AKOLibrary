@@ -58,6 +58,7 @@
 
  @li @subpage pageBuild "Build"
  @li @subpage pageDocumentation "Documentation"
+ @li @subpage pageTests "Tests"
  */
 
 /**
@@ -103,3 +104,14 @@
  required tools to generate PDF files from the Doxygen documentation.
  */
 
+/**
+ @page pageTests Tests
+ 
+ The AKOLibrary is bundled with a large suite of tests. 
+ 
+ To run the tests, select the "Universal_Framework | iOS Device" scheme, 
+ and select  the "Product / Test" menu entry. This will launch the
+ iPhone Simulator app, and then run the tests.
+ 
+ To see the test results, open the console in Xcode 4.
+ */
