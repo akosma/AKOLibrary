@@ -48,12 +48,51 @@
     CFMutableArrayRef _frames;
 }
 
+/**
+ The number of columns in which to split the text into.
+ */
 @property (nonatomic) NSInteger columnCount;
+
+/**
+ The font to be used for formatting the text displayed by the component.
+ */
 @property (nonatomic, retain) UIFont *font;
+
+/**
+ The text to be shown in the component.
+ */
 @property (nonatomic, copy) NSString *text;
+
+/**
+ The color of the text to be displayed in the component.
+ */
 @property (nonatomic, retain) UIColor *color;
+
+/**
+ The index where the text starts to be displayed in this page.
+ The AKOMultiPageTextView splits the text in several pages,
+ and this parameter (and the finalIndex property) is used to know
+ where to start rendering the text. The index refers to the index
+ in the "text" property.
+ */
 @property (nonatomic) CFIndex startIndex;
+
+/**
+ The index of the text where the rendering stops.
+ The AKOMultiPageTextView splits the text in several pages,
+ and this parameter (and the startIndex property) is used to know
+ where to start rendering the text. The index refers to the index
+ in the "text" property.
+ */
 @property (nonatomic, readonly) CFIndex finalIndex;
+
+/**
+ Specifies whether all the text was rendered in this page or not.
+ Signals to the AKOMultiPageTextView that owns this instance that
+ not all the text has been rendered in this component, and that a 
+ new page (at least) is required. This way, the AKOMultiPageTextView
+ component chains the creation of pages one after the other.
+ */
 @property (nonatomic, readonly) BOOL moreTextAvailable;
 
 @end

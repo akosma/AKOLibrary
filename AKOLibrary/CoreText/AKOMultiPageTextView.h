@@ -45,9 +45,27 @@
     NSInteger _columnCount;
 }
 
+/**
+ The text to be shown in the component.
+ The text inserted in this property is split among several
+ pages automatically, using the number of columns passed as 
+ parameters.
+ */
 @property (nonatomic, copy) NSString *text;
+
+/**
+ The font to be used for formatting the text displayed by the component.
+ */
 @property (nonatomic, retain) UIFont *font;
+
+/**
+ The color of the text to be displayed in the component.
+ */
 @property (nonatomic, retain) UIColor *color;
+
+/**
+ The number of columns in which to split the text into.
+ */
 @property (nonatomic) NSInteger columnCount;
 
 @end
