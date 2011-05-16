@@ -12,10 +12,24 @@
 @interface AKOFoundationTests : SenTestCase 
 
 - (void)testCurrentVersion;
+
 - (void)testRandomArrayObject;
 - (void)testCreateCSVFromArrayOfDictionaries;
+
 - (void)testRandomDateBetween1970AndNow;
 - (void)testRandomDateBetween2001AndNow;
+
 - (void)testStackMethods;
+
+- (void)testNumberFormattedAsCurrency;
+- (void)testRoundedInteger;
+- (void)testLocalizedYesNo;
+
+- (void)testRandomString;
+- (void)testSHADigest;
+- (void)testMD5Digest;
+- (void)testCapitalization;
+- (void)testURLEncode;
+- (void)testURLDecode;
 
 @end
