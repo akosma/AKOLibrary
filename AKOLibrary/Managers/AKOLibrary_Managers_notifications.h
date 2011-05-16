@@ -29,17 +29,70 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_Managers_notifications.h
+ Definition of several notifications used throughout the library.
+ */
+
 #import <Foundation/Foundation.h>
 
 
-// Notifications
+/**
+ @name Notifications
+ @{
+ */
+
+/**
+ Notification sent when the Reachability component detects a change of network status.
+ */
 extern NSString * const AKONetworkManagerConnectivityChangedNotification;
+
+/**
+ Notification sent whenever a network connection fails.
+ */
 extern NSString * const AKONetworkManagerDidFailWithErrorNotification;
 
-// User info dictionary keys
+/**
+ @}
+ @name User Info Dictionary Keys
+ */
+
+/**
+ Key used in userinfo dictionaries to signal errors.
+ The value held by this key is an NSError instance.
+ */
 extern NSString * const AKONetworkManagerErrorKey;
+
+/**
+ Key used in userinfo dictionaries to hold URLs.
+ The value held by this key is an NSURL instance.
+ */
 extern NSString * const AKONetworkManagerURLKey;
+
+/**
+ Key used in userinfo dictionaries to hold dates.
+ The value held by this key is an NSDate instance.
+ */
 extern NSString * const AKONetworkManagerDateKey;
+
+/**
+ Key used in userinfo dictionaries to hold titles.
+ The value held by this key is an NSString instance.
+ */
 extern NSString * const AKONetworkManagerTitleKey;
+
+/**
+ Key used in userinfo dictionaries to hold texts.
+ The value held by this key is an NSString instance.
+ */
 extern NSString * const AKONetworkManagerTextKey;
+
+/**
+ Key used in userinfo dictionaries to hold links.
+ The value held by this key is an NSString instance.
+ */
 extern NSString * const AKONetworkManagerLinkKey;
+
+/**
+ @}
+ */
