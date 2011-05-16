@@ -32,7 +32,7 @@
 #import "UIFont+AKOLibrary.h"
 
 
-@implementation UIFont (AKOLibrary)
+@implementation UIFont(AKOLibrary)
 
 - (CTFontRef)ako_createCTFont
 {

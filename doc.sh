@@ -30,6 +30,13 @@ cd ../../
 cd Documentation/html
 make
 make install
+cd ../../
+
+# Copy the man pages to their location
+# (this requires super user privileges, so you might
+# want to run this script with sudo)
+cd Documentation/man/man3
+cp * /usr/share/man/man3
 cd ../../../
 
 # Information about what happened

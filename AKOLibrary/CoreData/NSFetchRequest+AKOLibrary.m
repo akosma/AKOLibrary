@@ -31,7 +31,7 @@
 
 #import "NSFetchRequest+AKOLibrary.h"
 
-@implementation NSFetchRequest (AKOLibrary)
+@implementation NSFetchRequest(AKOLibrary)
 
 - (void)ako_sortAscending:(BOOL)ascending withKeys:(NSString *)firstKey, ...
 {

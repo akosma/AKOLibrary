@@ -31,7 +31,11 @@
 
 #import <CoreData/CoreData.h>
 
-@interface NSFetchRequest (AKOLibrary)
+/** 
+ @category NSFetchRequest(AKOLibrary) 
+ A category on NSFetchRequest
+ */
+@interface NSFetchRequest(AKOLibrary)
 
 /**
  Sorts the current fetch request using the keys specified as parameter.

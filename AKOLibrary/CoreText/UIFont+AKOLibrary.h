@@ -32,7 +32,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 
-@interface UIFont (AKOLibrary)
+/**
+ @category UIFont(AKOLibrary)
+ Helper methods on UIFont.
+ */
+@interface UIFont(AKOLibrary)
 
 /**
  Creates and returns a CTFontRef object that corresponds to the parameters.
