@@ -9,12 +9,8 @@ echo
 echo 
 
 # Build the documentation using Doxygen (on the command line)
-cd AKOLibrary
-
-# Remove any previous existing documentation
+# First remove any previous existing documentation
 rm -r Documentation
-
-cd ..
 
 # Generate the documentation
 # (this assumes that the Doxygen app is installed 
@@ -22,22 +18,22 @@ cd ..
 /Applications/Doxygen.app/Contents/Resources/doxygen
 
 # Generate the PDF file from the LaTeX documentation
-cd AKOLibrary/Documentation/latex
+cd Documentation/latex
 make
-cd ../../
+cd ../
 
 # Generate the Xcode docset from the HTML documentation
-cd Documentation/html
+cd html
 make
 make install
-cd ../../
+cd ../
 
 # Copy the man pages to their location
 # (this requires super user privileges, so you might
 # want to run this script with sudo)
-cd Documentation/man/man3
+cd man/man3
 cp * /usr/share/man/man3
-cd ../../../
+cd ../../
 
 # Information about what happened
 echo 
