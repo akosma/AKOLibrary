@@ -1,0 +1,6 @@
+//
+// Prefix header for all source files of the 'AKOLibrary' target in the 'AKOLibrary' project
+//
+
+#ifdef __OBJC__
+#endif
