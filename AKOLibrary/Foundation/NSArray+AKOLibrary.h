@@ -31,10 +31,25 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @category NSArray(AKOLibrary)
+ Set of utility methods.
+ */
+@interface NSArray(AKOLibrary)
 
-@interface NSArray (AKOLibrary)
-
+/**
+ Returns a random object from the array.
+ If the array does not contain any objects, the 
+ method returns nil.
+ @return A random object from the array.
+ */
 - (id)ako_randomObject;
+
+/**
+ Formats the contents of this array as a CSV-formatted string.
+ This array should only contain NSDictionary instances, each
+ using exclusively NSString instances as keys and values.
+ */
 - (NSData *)ako_formatAsCSV;
 
 @end

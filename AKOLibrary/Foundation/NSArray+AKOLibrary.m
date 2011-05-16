@@ -32,7 +32,7 @@
 #import "NSArray+AKOLibrary.h"
 
 
-@implementation NSArray (AKOLibrary)
+@implementation NSArray(AKOLibrary)
 
 - (id)ako_randomObject
 {
