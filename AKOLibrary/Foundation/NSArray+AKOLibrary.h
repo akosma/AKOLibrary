@@ -49,7 +49,8 @@
  Formats the contents of this array as a CSV-formatted string.
  This array should only contain NSDictionary instances, each
  using exclusively NSString instances as keys and values.
+ @return A UTF-8 formatted string, in CSV format.
  */
-- (NSData *)ako_formatAsCSV;
+- (NSString *)ako_formatAsCSV;
 
 @end

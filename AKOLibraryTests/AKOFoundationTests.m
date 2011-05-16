@@ -51,8 +51,7 @@
     NSDictionary *dict1 = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
     NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"value3", @"key1", @"value4", @"key2", nil];
     NSArray *array = [NSArray arrayWithObjects:dict1, dict2, nil];
-    NSData *csvData = [array ako_formatAsCSV];
-    NSString *csv = [[[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding] autorelease];
+    NSString *csv = [array ako_formatAsCSV];
     
     NSString *output = @"key2, key1, \nvalue2, value1, \nvalue4, value3, \n";
     BOOL equal = [csv isEqualToString:output];

@@ -31,6 +31,12 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @file AKOLibrary_Foundation_functions.h
+ Helper global functions dealing with Foundation classes and utilities.
+ */
+
+
 #undef NSLocalizedString
 #define NSLocalizedString(key, comment) AKOLocalizedString(key, comment)
 
@@ -39,18 +45,23 @@
  Overrides the current implementation of NSLocalizedString
  so that strings are loaded automatically when the user 
  changes the current language in the application.
+ @param key The key of the string in the .strings file.
+ @param comment The comment corresponding to the localized string.
+ @return A localized string stored in a .strings file.
  */
 NSString *AKOLocalizedString(NSString *key, NSString *comment);
 
 /**
  The "supportedLanguages" parameter should be of the form
-  NSSet *languages = [NSSet setWithObjects:@"en", @"de", @"fr", @"it", 
-                      @"es", @"pt", @"ar", @"ja", @"zh_CN", nil];
- including all the languages currently supported in the current application.
+ @param supportedLanguages A set of NSString instances, specifying 
+ all the languages currently supported in the current application.
+ @return The current system language of the current device.
  */
 NSString *AKOCurrentSystemLanguage(NSSet *supportedLanguages);
 
 /**
  Returns the current version number of the application.
+ @return An NSString with the current version of the application,
+ as defined in the local info.plist file of the current bundle.
  */
 NSString *AKOCurrentVersionNumber();

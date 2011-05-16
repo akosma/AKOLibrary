@@ -46,7 +46,7 @@
     return result;
 }
 
-- (NSData *)ako_formatAsCSV
+- (NSString *)ako_formatAsCSV
 {
     NSMutableString *text = [NSMutableString string];
     BOOL headerDone = NO;
@@ -68,7 +68,7 @@
         }
         [text appendString:@"\n"];
     }
-    return [text dataUsingEncoding:NSUTF8StringEncoding];
+    return text;
 }
 
 @end
