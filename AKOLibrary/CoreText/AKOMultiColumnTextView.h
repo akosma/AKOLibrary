@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOMultiColumnTextView.h
+ Definition of the AKOMultiColumnTextView class.
+ */
+
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 

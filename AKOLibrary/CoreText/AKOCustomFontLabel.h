@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOCustomFontView.h
+ Definition of the AKOCustomFontView class.
+ */
+
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 

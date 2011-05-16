@@ -1,6 +1,6 @@
 //
 //  AKOCircleView.h
-//  CSComposer
+//  AKOLibrary
 //
 //  Created by Adrian on 5/16/11.
 //  Copyright (c) 2009, 2010, 2011, Adrian Kosmaczewski & akosma software

@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file NSFetchRequest+AKOLibrary.h
+ Contains a category on NSFetchRequest.
+ */
+
 #import <CoreData/CoreData.h>
 
 /** 

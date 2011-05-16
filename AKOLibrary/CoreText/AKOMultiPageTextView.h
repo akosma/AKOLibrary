@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOMultiPageTextView.h
+ Definition of the AKOMultiPageTextView class.
+ */
+
 #import <UIKit/UIKit.h>
 
 /**

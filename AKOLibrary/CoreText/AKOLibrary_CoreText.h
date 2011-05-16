@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_CoreText.h
+ Header file with extensions to Core Text.
+ */
+
 #import "UIFont+AKOLibrary.h"
 #import "AKOCustomFontLabel.h"
 #import "AKOMultiPageTextView.h"

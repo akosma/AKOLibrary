@@ -29,4 +29,9 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_CoreData.h
+ Header file with extensions to the Core Data framework.
+ */
+
 #import "NSFetchRequest+AKOLibrary.h"

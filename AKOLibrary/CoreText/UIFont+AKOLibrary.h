@@ -29,6 +29,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIFont+AKOLibrary.h
+ Contains a category on UIFont with helper methods.
+ */
+
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 
