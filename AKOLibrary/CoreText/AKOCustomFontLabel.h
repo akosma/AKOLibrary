@@ -30,8 +30,8 @@
 //
 
 /**
- @file AKOCustomFontView.h
- Definition of the AKOCustomFontView class.
+ @file AKOCustomFontLabel.h
+ Definition of the AKOCustomFontLabel class.
  */
 
 #import <UIKit/UIKit.h>
