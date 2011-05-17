@@ -33,7 +33,12 @@ NSString *AKOLocalizedString(NSString *key, NSString *comment)
                                                     forLocalization:locale];
     NSString *path = [resourcePath stringByDeletingLastPathComponent];
     NSBundle *currentResource = [NSBundle bundleWithPath:path];
-    return NSLocalizedStringFromTableInBundle(key, nil, currentResource, nil);
+    NSString *result = NSLocalizedStringFromTableInBundle(key, nil, currentResource, nil);
+    if (result == nil)
+    {
+        result = key;
+    }
+    return result;
 }
 
 NSString *AKOCurrentSystemLanguage(NSSet *supportedLanguages)
