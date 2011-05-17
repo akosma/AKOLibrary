@@ -276,6 +276,8 @@
 		3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTests.m; sourceTree = "<group>"; };
 		3A709CFC1381211200F091F5 /* AKOFoundationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFoundationTests.h; sourceTree = "<group>"; };
 		3A709CFD1381211200F091F5 /* AKOFoundationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOFoundationTests.m; sourceTree = "<group>"; };
+		3A8512DA138263E1004270F9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3A8512DC138263E7004270F9 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		3A91D82913808FC4006BBC46 /* AKOLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKOLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A91D82F13808FC4006BBC46 /* AKOLibrary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKOLibrary-Info.plist"; sourceTree = "<group>"; };
 		3A91D83313808FC4006BBC46 /* AKOLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKOLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -581,6 +583,8 @@
 				3A3EB36A13810A1400FD02C4 /* Externals */,
 				3A91D83A13808FC4006BBC46 /* Frameworks */,
 				3A91D82A13808FC4006BBC46 /* Products */,
+				3A8512DA138263E1004270F9 /* LICENSE */,
+				3A8512DC138263E7004270F9 /* README.textile */,
 			);
 			sourceTree = "<group>";
 		};
