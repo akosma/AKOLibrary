@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_Foundation.h
+ Main header file for the extensions to the Foundation framework.
+ */
+
 #import "AKOLibrary_Foundation_functions.h"
 
 #import "NSString+AKOLibrary.h"
