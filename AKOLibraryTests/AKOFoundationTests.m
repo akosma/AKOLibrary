@@ -115,13 +115,13 @@
     BOOL friEquals = [friday isEqualToString:@"WEEKDAY_6"];
     BOOL satEquals = [saturday isEqualToString:@"WEEKDAY_7"];
     
-    STAssertTrue(sunEquals, @"Sunday should be properly formatted");
-    STAssertTrue(monEquals, @"Monday should be properly formatted");
-    STAssertTrue(tueEquals, @"Tuesday should be properly formatted");
-    STAssertTrue(wedEquals, @"Wednesday should be properly formatted");
-    STAssertTrue(thuEquals, @"Thursday should be properly formatted");
-    STAssertTrue(friEquals, @"Friday should be properly formatted");
-    STAssertTrue(satEquals, @"Saturday should be properly formatted");
+    STAssertTrue(sunEquals, @"Sunday should be properly formatted, received %@ instead", sunday);
+    STAssertTrue(monEquals, @"Monday should be properly formatted, received %@ instead", monday);
+    STAssertTrue(tueEquals, @"Tuesday should be properly formatted, received %@ instead", tuesday);
+    STAssertTrue(wedEquals, @"Wednesday should be properly formatted, received %@ instead", wednesday);
+    STAssertTrue(thuEquals, @"Thursday should be properly formatted, received %@ instead", thursday);
+    STAssertTrue(friEquals, @"Friday should be properly formatted, received %@ instead", friday);
+    STAssertTrue(satEquals, @"Saturday should be properly formatted, received %@ instead", saturday);
 }
 
 #pragma mark - NSMutableArray methods
@@ -176,7 +176,7 @@
 
 #pragma mark - NSNumber methods
 
-- (void)testNumberFormattedAsCurrency
+- (void)testDoubleFormattedAsCurrency
 {
     double value = 45134.5387;
     NSNumber *number = [NSNumber numberWithDouble:value];
@@ -185,6 +185,29 @@
     
     BOOL equals = [result isEqualToString:expected];
     STAssertTrue(equals, @"The expected result is @%, received %@", expected, result);
+}
+
+- (void)testFloatFormattedAsCurrency
+{
+    float value = 45134.5387;
+    NSNumber *number = [NSNumber numberWithFloat:value];
+    NSString *result = [number ako_stringFormattedAsCurrency];
+    NSString *expected = @"45.134,54";
+    
+    BOOL equals = [result isEqualToString:expected];
+    STAssertTrue(equals, @"The expected result is @%, received %@", expected, result);
+}
+
+- (void)testNumberFormattedAsCurrencyOnlyWorksWithFloatingPoint
+{
+    NSInteger value = 45134;
+    NSNumber *number = [NSNumber numberWithInt:value];
+    NSString *result = [number ako_stringFormattedAsCurrency];
+    STAssertNil(result, @"The expected result is nil, received %@", result);
+    
+    number = [NSNumber numberWithBool:YES];
+    result = [number ako_stringFormattedAsCurrency];
+    STAssertNil(result, @"The expected result is nil, received %@", result);
 }
 
 - (void)testRoundedInteger
@@ -198,6 +221,17 @@
     STAssertTrue(equals, @"The expected result is @%, received %@", expected, result);
 }
 
+- (void)testRoundedIntegerOnlyWorksWithIntegers
+{
+    NSNumber *number = [NSNumber numberWithBool:YES];
+    NSString *result = [number ako_stringFormattedAsRoundedInteger];
+    STAssertNil(result, @"The expected result is nil, received %@", result);
+
+    number = [NSNumber numberWithDouble:2342.45];
+    result = [number ako_stringFormattedAsRoundedInteger];
+    STAssertNil(result, @"The expected result is nil, received %@", result);
+}
+
 - (void)testLocalizedYesNo
 {
     NSNumber *boolYes = [NSNumber numberWithBool:YES];
@@ -209,8 +243,75 @@
     BOOL equalsYes = [yes isEqualToString:@"YES"];
     BOOL equalsNo = [no isEqualToString:@"NO"];
     
-    STAssertTrue(equalsYes, @"The value 'YES' should be there");
-    STAssertTrue(equalsNo, @"The value 'NO' should be there");
+    STAssertTrue(equalsYes, @"The value 'YES' should be there, received %@ instead", yes);
+    STAssertTrue(equalsNo, @"The value 'NO' should be there, received %@ instead", no);
+}
+
+- (void)testLocalizedYesNoOnlyWorksWithBooleans
+{
+    NSNumber *boolYes = [NSNumber numberWithInt:234];
+    NSString *yes = [boolYes ako_stringWithLocalizedYesNo];
+    STAssertNil(yes, @"This should be nil, got %@ instead", yes);
+
+    boolYes = [NSNumber numberWithFloat:2334.4];
+    yes = [boolYes ako_stringWithLocalizedYesNo];
+    STAssertNil(yes, @"This should be nil, got %@ instead", yes);
+}
+
+- (void)testGeneratedFromBoolean
+{
+    NSNumber *value = [NSNumber numberWithBool:YES];
+    BOOL ok = [value ako_generatedFromBoolean];
+    STAssertTrue(ok, @"Generated from boolean");
+    
+    BOOL notok = [value ako_generatedFromDouble];
+    STAssertFalse(notok, @"Not generated from double");
+    notok = [value ako_generatedFromFloat];
+    STAssertFalse(notok, @"Not generated from float");
+    notok = [value ako_generatedFromInteger];
+    STAssertFalse(notok, @"Not generated from int");
+}
+
+- (void)testGeneratedFromInteger
+{
+    NSNumber *value = [NSNumber numberWithInt:2342];
+    BOOL ok = [value ako_generatedFromInteger];
+    STAssertTrue(ok, @"Generated from integer");
+
+    BOOL notok = [value ako_generatedFromDouble];
+    STAssertFalse(notok, @"Not generated from double");
+    notok = [value ako_generatedFromFloat];
+    STAssertFalse(notok, @"Not generated from float");
+    notok = [value ako_generatedFromBoolean];
+    STAssertFalse(notok, @"Not generated from bool");
+}
+
+- (void)testGeneratedFromFloat
+{
+    NSNumber *value = [NSNumber numberWithFloat:3234.453];
+    BOOL ok = [value ako_generatedFromFloat];
+    STAssertTrue(ok, @"Generated from float");
+    
+    BOOL notok = [value ako_generatedFromDouble];
+    STAssertFalse(notok, @"Not generated from double");
+    notok = [value ako_generatedFromBoolean];
+    STAssertFalse(notok, @"Not generated from bool");
+    notok = [value ako_generatedFromInteger];
+    STAssertFalse(notok, @"Not generated from int");
+}
+
+- (void)testGeneratedFromDouble
+{
+    NSNumber *value = [NSNumber numberWithDouble:2345235345.2345235];
+    BOOL ok = [value ako_generatedFromDouble];
+    STAssertTrue(ok, @"Generated from double");
+
+    BOOL notok = [value ako_generatedFromBoolean];
+    STAssertFalse(notok, @"Not generated from bool");
+    notok = [value ako_generatedFromFloat];
+    STAssertFalse(notok, @"Not generated from float");
+    notok = [value ako_generatedFromInteger];
+    STAssertFalse(notok, @"Not generated from int");
 }
 
 #pragma mark - NSString methods

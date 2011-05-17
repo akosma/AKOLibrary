@@ -21,9 +21,17 @@
 
 - (void)testStackMethods;
 
-- (void)testNumberFormattedAsCurrency;
+- (void)testDoubleFormattedAsCurrency;
+- (void)testFloatFormattedAsCurrency;
+- (void)testNumberFormattedAsCurrencyOnlyWorksWithFloatingPoint;
 - (void)testRoundedInteger;
+- (void)testRoundedIntegerOnlyWorksWithIntegers;
 - (void)testLocalizedYesNo;
+- (void)testLocalizedYesNoOnlyWorksWithBooleans;
+- (void)testGeneratedFromBoolean;
+- (void)testGeneratedFromInteger;
+- (void)testGeneratedFromFloat;
+- (void)testGeneratedFromDouble;
 
 - (void)testRandomString;
 - (void)testSHADigest;

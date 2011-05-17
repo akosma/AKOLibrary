@@ -21,14 +21,72 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file NSNumber+AKOLibrary.h
+ Contains a category on NSNumber with helper methods.
+ */
+
 #import <Foundation/Foundation.h>
 
+/**
+ @category NSNumber(AKOLibrary)
+ Extends the NSNumber category with some helper methods.
+ */
+@interface NSNumber(AKOLibrary)
 
-@interface NSNumber (AKOLibrary)
+/**
+ Specifies whether the current instance was created from a boolean or not.
+ @return A BOOL value.
+ */
+- (BOOL)ako_generatedFromBoolean;
 
+/**
+ Specifies whether the current instance was created from an integer or not.
+ @return A BOOL value.
+ */
+- (BOOL)ako_generatedFromInteger;
+
+/**
+ Specifies whether the current instance was created from a double or not.
+ @return A BOOL value.
+ */
+- (BOOL)ako_generatedFromDouble;
+
+/**
+ Specifies whether the current instance was created from a float or not.
+ @return A BOOL value.
+ */
+- (BOOL)ako_generatedFromFloat;
+
+/**
+ Returns a string formatted as currency, using the current locale.
+ This method only works with NSNumber instances build from float or double values.
+ @return An NSString instance.
+ */
 - (NSString *)ako_stringFormattedAsLocalCurrency;
+
+/**
+ Returns a string manually converted into a currency format.
+ This method does not use the current locale. A number like
+ "45134.5387" would get transformed in a string 
+ as follows: "45.134,54". This method only works with
+ NSNumber instances build from float or double values.
+ @return An NSString instance representing the current number.
+ */
 - (NSString *)ako_stringFormattedAsCurrency;
+
+/**
+ Rounds the integer stored in this instance and returns it as string.
+ This method only works with NSNumber instances build from integer values.
+ @return An NSString instance representing a rounded version of the current number.
+ */
 - (NSString *)ako_stringFormattedAsRoundedInteger;
+
+/**
+ Returns a string representing the current boolean value of this instance.
+ This method only works if the current instance has been created with a boolean value.
+ @return An NSString instance with the "YES" or "NO" value.
+ */
 - (NSString *)ako_stringWithLocalizedYesNo;
 
 @end
