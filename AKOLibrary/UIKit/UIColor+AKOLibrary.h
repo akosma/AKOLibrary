@@ -1,8 +1,8 @@
 //
-//  AKOLibrary_UIKit.h
+//  UIColor+AKOLibrary.h
 //  AKOLibrary
 //
-//  Created by Adrian on 4/15/11.
+//  Created by Adrian on 5/17/11.
 //  Copyright (c) 2009, 2010, 2011, Adrian Kosmaczewski & akosma software
 //  All rights reserved.
 //  
@@ -21,17 +21,35 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "AKOLibrary_UIKit_functions.h"
-#import "UIView+AKOLibrary.h"
-#import "UILabel+AKOLibrary.h"
-#import "UIViewController+AKOLibrary.h"
-#import "UIDevice+AKOLibrary.h"
-#import "UIColor+AKOLibrary.h"
-#import "AKOEasyTableViewControllerDelegate.h"
-#import "AKOEasyNavigationController.h"
-#import "AKOEasyTableViewController.h"
-#import "UIImage+AKOLibrary.h"
-#import "UITableViewController+AKOLibrary.h"
-#import "AKOLineView.h"
-#import "AKOArrowView.h"
-#import "AKOCircleView.h"
+#import <UIKit/UIKit.h>
+
+
+@interface UIColor(AKOLibrary)
+
++ (UIColor *)ako_randomColor;
+
++ (UIColor *)ako_indigoColor;
+
++ (UIColor *)ako_tealColor;
+
++ (UIColor *)ako_violetColor;
+
++ (UIColor *)ako_electricVioletColor;
+
++ (UIColor *)ako_vividVioletColor;
+
++ (UIColor *)ako_darkVioletColor;
+
++ (UIColor *)ako_amberColor;
+
++ (UIColor *)ako_darkAmberColor;
+
++ (UIColor *)ako_lemonColor;
+
++ (UIColor *)ako_roseColor;
+
++ (UIColor *)ako_rubyColor;
+
++ (UIColor *)ako_fireEngineRed;
+
+@end

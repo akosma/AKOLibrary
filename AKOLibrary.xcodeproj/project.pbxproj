@@ -132,6 +132,8 @@
 		3A3EB3C613810A7F00FD02C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */; };
 		3A3EB3C713810A7F00FD02C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BD13810A7F00FD02C4 /* Security.framework */; };
 		3A3EB3C813810A7F00FD02C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */; };
+		3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */; };
+		3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */; };
 		3A709CD213811B0800F091F5 /* AKOCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */; };
 		3A709CF213811D5100F091F5 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BA13810A7F00FD02C4 /* libz.1.2.3.dylib */; };
 		3A709CF313811D5400F091F5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
@@ -272,6 +274,8 @@
 		3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3A3EB3BD13810A7F00FD02C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AKOLibrary.h"; sourceTree = "<group>"; };
+		3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AKOLibrary.m"; sourceTree = "<group>"; };
 		3A709CD013811B0800F091F5 /* AKOCoreDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCoreDataTests.h; sourceTree = "<group>"; };
 		3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTests.m; sourceTree = "<group>"; };
 		3A709CFC1381211200F091F5 /* AKOFoundationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFoundationTests.h; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 				3A3EB304138109E900FD02C4 /* UIView+AKOLibrary.m */,
 				3A3EB305138109E900FD02C4 /* UIViewController+AKOLibrary.h */,
 				3A3EB306138109E900FD02C4 /* UIViewController+AKOLibrary.m */,
+				3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */,
+				3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */,
 				3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */,
 				3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */,
+				3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,6 +906,7 @@
 				3A94AA541381AA000079E5A4 /* AKOLineView.m in Sources */,
 				3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */,
 				3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */,
+				3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

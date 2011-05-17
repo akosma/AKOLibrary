@@ -28,6 +28,7 @@
  Helper global functions dealing with Foundation classes and utilities.
  */
 
+extern long long const AKO_ARC4RANDOM_MAX;
 
 #undef NSLocalizedString
 #define NSLocalizedString(key, comment) AKOLocalizedString(key, comment)

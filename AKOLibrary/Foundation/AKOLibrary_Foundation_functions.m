@@ -23,6 +23,8 @@
 
 #include "AKOLibrary_Foundation_functions.h"
 
+long long const AKO_ARC4RANDOM_MAX = 0x100000000;
+
 NSString *AKOLocalizedString(NSString *key, NSString *comment)
 {
     NSArray *languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
