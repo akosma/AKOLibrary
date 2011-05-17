@@ -23,8 +23,9 @@
 
 #import "NSDate+AKOLibrary.h"
 #import "AKOPreferencesManager.h"
+#import "AKOLibrary_Foundation_functions.h"
 
-@implementation NSDate (AKOLibrary)
+@implementation NSDate(AKOLibrary)
 
 + (NSDate *)ako_randomDateBetween1970AndNow
 {
@@ -72,7 +73,7 @@
     // Sunday = 1, Saturday = 7
     NSInteger day = [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:self] weekday];
     NSString *key = [NSString stringWithFormat:@"WEEKDAY_%d", day];
-    return NSLocalizedString(key, @"The day of the week in the current language");
+    return AKOLocalizedString(key, @"The day of the week in the current language");
 }
 
 @end

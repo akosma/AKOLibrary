@@ -21,16 +21,54 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file NSDate+AKOLibrary.h
+ Contains a category on NSDate with helper methods.
+ */
+
 #import <Foundation/Foundation.h>
 
+/**
+ @category NSDate(AKOLibrary)
+ Extends the NSDate class with helper methods.
+ */
+@interface NSDate(AKOLibrary)
 
-@interface NSDate (AKOLibrary)
-
+/**
+ Returns a random date between the present moment and 1970.
+ @return An NSDate instance representing a date between today and 1970.
+ */
 + (NSDate *)ako_randomDateBetween1970AndNow;
+
+/**
+ Returns a random date between the present moment and 2001.
+ @return An NSDate instance representing a date between today and 2001.
+ */
 + (NSDate *)ako_randomDateBetween2001AndNow;
 
+/**
+ Returns a string that represents the current date using the current locale.
+ This method returns a string that does only contain date information, 
+ without any time information.
+ @return An NSString instance.
+ */
 - (NSString *)ako_dateString;
+
+/**
+ Returns a string that represents the current date and time using the current locale.
+ This method returns a string that contains date and time information.
+ @return An NSString instance.
+ */
 - (NSString *)ako_dateTimeString;
+
+/**
+ Returns a string that represents the current weekday.
+ This method returns strings of the form WEEKDAY_%d, where the integer pattern
+ goes from 1 (Sunday) to 7 (Saturday). Clients of this class might want to
+ localize these values in their specific languages before displaying them
+ to the user.
+ @return An NSString instance.
+ */
 - (NSString *)ako_weekday;
 
 @end

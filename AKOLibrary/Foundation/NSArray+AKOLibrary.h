@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file NSArray+AKOLibrary.h
+ Contains a category on NSArray, with helper methods.
+ */
+
 #import <Foundation/Foundation.h>
 
 /**

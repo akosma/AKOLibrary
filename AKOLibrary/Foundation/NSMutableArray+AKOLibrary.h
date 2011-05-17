@@ -21,13 +21,36 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file NSMutableArray+AKOLibrary.h
+ Contains a category on NSMutableArray with helper functions.
+ */
+
 #import <Foundation/Foundation.h>
 
+/**
+ @category NSMutableArray(AKOLibrary)
+ Extends the NSMutableArray class with helper methods.
+ This category in particular adds extensions that help using
+ such an instance as if it were a stack, with its corresponding
+ push and pop methods.
+ */
+@interface NSMutableArray(AKOLibrary)
 
-@interface NSMutableArray (AKOLibrary)
-
+/**
+ Pushes an object on top of the current instance.
+ This method is the equivalent of the "push" method, and uses
+ the current instance as if it were a real stack class.
+ @param inObject The object being pushed to the top of the stack.
+ */
 - (void)ako_stackPush:(id)inObject;
 
+/**
+ Pops an object from the top of the current instance.
+ This method is the equivalent of the "pop" method, and uses
+ the current instance as if it were a real stack class.
+ @return The object being popped from the top of the stack.
+ */
 - (id)ako_stackPop;
 
 @end

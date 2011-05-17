@@ -24,7 +24,7 @@
 #import "NSMutableArray+AKOLibrary.h"
 
 
-@implementation NSMutableArray (AKOLibrary)
+@implementation NSMutableArray(AKOLibrary)
 
 - (void)ako_stackPush:(id)inObject
 {
