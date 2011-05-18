@@ -125,7 +125,6 @@
                        &kCFTypeDictionaryValueCallBacks);
     
     CFAttributedStringRef attrString = CFAttributedStringCreate(kCFAllocatorDefault, (CFStringRef)self.text, attributes);
-    CFRelease(attributes);
     
     CTLineRef line = CTLineCreateWithAttributedString(attrString);
 
@@ -134,18 +133,19 @@
     CFStringRef elipString = CFStringCreateWithCharacters(NULL, &elip, 1);
     CFAttributedStringRef elipAttrString = CFAttributedStringCreate(NULL, elipString, attributes);
     CTLineRef ellipsis = CTLineCreateWithAttributedString(elipAttrString);
-    line = CTLineCreateTruncatedLine(line, self.frame.size.width, kCTLineTruncationEnd, ellipsis);
+    CTLineRef line2 = CTLineCreateTruncatedLine(line, self.frame.size.width, kCTLineTruncationEnd, ellipsis);
     
+    CFRelease(attributes);
     CFRelease(ellipsis);
     CFRelease(elipAttrString);
     CFRelease(elipString);
     CFRelease(attrString);
-    CFRelease(attributes);
     
     // Set text position and draw the line into the graphics context
     CGContextSetTextPosition(context, 0.0, 20.0);
     CTLineDraw(line, context);
     CFRelease(line);
+    CFRelease(line2);
 }
 
 #pragma mark -
