@@ -132,7 +132,7 @@
 		3A3EB3C613810A7F00FD02C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */; };
 		3A3EB3C713810A7F00FD02C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BD13810A7F00FD02C4 /* Security.framework */; };
 		3A3EB3C813810A7F00FD02C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */; };
-		3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */; };
+		3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */; };
 		3A709CD213811B0800F091F5 /* AKOCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */; };
 		3A709CF213811D5100F091F5 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BA13810A7F00FD02C4 /* libz.1.2.3.dylib */; };
@@ -154,11 +154,11 @@
 		3A709D041381217E00F091F5 /* NSURL+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2D6138109E900FD02C4 /* NSURL+AKOLibrary.m */; };
 		3A709D051381219B00F091F5 /* AKOLibrary_Foundation_functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2CA138109E900FD02C4 /* AKOLibrary_Foundation_functions.m */; };
 		3A709D06138122A400F091F5 /* AKOPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2EB138109E900FD02C4 /* AKOPreferencesManager.m */; };
-		3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4D1381AA000079E5A4 /* AKOLineView.h */; };
+		3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4D1381AA000079E5A4 /* AKOLineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA541381AA000079E5A4 /* AKOLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA4E1381AA000079E5A4 /* AKOLineView.m */; };
-		3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4F1381AA000079E5A4 /* AKOArrowView.h */; };
+		3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4F1381AA000079E5A4 /* AKOArrowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA501381AA000079E5A4 /* AKOArrowView.m */; };
-		3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA511381AA000079E5A4 /* AKOCircleView.h */; };
+		3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA511381AA000079E5A4 /* AKOCircleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA521381AA000079E5A4 /* AKOCircleView.m */; };
 /* End PBXBuildFile section */
 
@@ -703,15 +703,15 @@
 				3A3EB3A213810A1400FD02C4 /* ASIInputStream.h in Headers */,
 				3A3EB3A513810A1400FD02C4 /* ASINetworkQueue.h in Headers */,
 				3A3EB3A813810A1400FD02C4 /* ASIProgressDelegate.h in Headers */,
+				3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */,
+				3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */,
+				3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */,
+				3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */,
 				3A3EB3A913810A1400FD02C4 /* JSONKit.h in Headers */,
 				3A3EB3AC13810A1400FD02C4 /* Reachability.h in Headers */,
 				3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */,
 				3A3EB3B013810A1400FD02C4 /* NSDataAdditions.h in Headers */,
 				3A3EB3B313810A1400FD02C4 /* TBXML.h in Headers */,
-				3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */,
-				3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */,
-				3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */,
-				3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
