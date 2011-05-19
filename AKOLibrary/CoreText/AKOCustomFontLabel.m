@@ -37,6 +37,8 @@
 @dynamic textColor;
 @dynamic shadowOffset;
 @dynamic shadowColor;
+@dynamic multiline;
+@dynamic margin;
 
 #pragma mark -
 #pragma mark Init and dealloc
@@ -69,6 +71,7 @@
     self.text = @"";
     self.shadowColor = [UIColor whiteColor];
     self.shadowOffset = CGSizeMake(0,0);
+    self.margin = 10.0;
 }
 
 - (void)dealloc 
@@ -90,7 +93,8 @@
     CGAffineTransform shadowFlip = CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, self.frame.size.height);
     CGContextConcatCTM(context, shadowFlip);
     
-    if ((_shadowOffset.width != 0) || (_shadowOffset.height != 0)) {
+    if ((_shadowOffset.width != 0) || (_shadowOffset.height != 0)) 
+    {
         // Initialize string, font, and context
         CFStringRef shadowKeys[] = { kCTFontAttributeName, kCTForegroundColorAttributeName };
         CFTypeRef shadowValues[] = { [self font], self.shadowColor.CGColor };
@@ -111,8 +115,6 @@
         CGContextSetTextPosition(context, _shadowOffset.width, 20.0-_shadowOffset.height);
         CTLineDraw(shadowLine, context);
     }
-   
-
 
     // Initialize string, font, and context
     CFStringRef keys[] = { kCTFontAttributeName, kCTForegroundColorAttributeName };
@@ -125,31 +127,78 @@
                        &kCFTypeDictionaryValueCallBacks);
     
     CFAttributedStringRef attrString = CFAttributedStringCreate(kCFAllocatorDefault, (CFStringRef)self.text, attributes);
-    
-    CTLineRef line = CTLineCreateWithAttributedString(attrString);
 
-    // Add an ellipsis at the end, if required
-    UniChar elip = 0x2026;
-    CFStringRef elipString = CFStringCreateWithCharacters(NULL, &elip, 1);
-    CFAttributedStringRef elipAttrString = CFAttributedStringCreate(NULL, elipString, attributes);
-    CTLineRef ellipsis = CTLineCreateWithAttributedString(elipAttrString);
-    CTLineRef line2 = CTLineCreateTruncatedLine(line, self.frame.size.width, kCTLineTruncationEnd, ellipsis);
-    
-    CFRelease(attributes);
-    CFRelease(ellipsis);
-    CFRelease(elipAttrString);
-    CFRelease(elipString);
-    CFRelease(attrString);
-    
-    // Set text position and draw the line into the graphics context
-    CGContextSetTextPosition(context, 0.0, 20.0);
-    CTLineDraw(line, context);
-    CFRelease(line);
-    CFRelease(line2);
+    if (self.isMultiline)
+    {
+        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(attrString);
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGRect rect = CGRectInset(self.bounds, self.margin, self.margin);
+        CGPathAddRect(path, NULL, rect);
+        CTFrameRef frame = CTFramesetterCreateFrame(framesetter, 
+                                                    CFRangeMake(0, [self.text length]), 
+                                                    path, 
+                                                    NULL);
+        CTFrameDraw(frame, context);
+    }
+    else
+    {
+        
+        CTLineRef line = CTLineCreateWithAttributedString(attrString);
+
+        // Add an ellipsis at the end, if required
+        UniChar elip = 0x2026;
+        CFStringRef elipString = CFStringCreateWithCharacters(NULL, &elip, 1);
+        CFAttributedStringRef elipAttrString = CFAttributedStringCreate(NULL, elipString, attributes);
+        CTLineRef ellipsis = CTLineCreateWithAttributedString(elipAttrString);
+        CTLineRef line2 = CTLineCreateTruncatedLine(line, 
+                                                    self.bounds.size.width, 
+                                                    kCTLineTruncationEnd, 
+                                                    ellipsis);
+        
+        CFRelease(attributes);
+        CFRelease(ellipsis);
+        CFRelease(elipAttrString);
+        CFRelease(elipString);
+        CFRelease(attrString);
+        
+        // Set text position and draw the line into the graphics context
+        CGContextSetTextPosition(context, self.margin, self.margin);
+        CTLineDraw(line2, context);
+        CFRelease(line);
+        CFRelease(line2);
+    }
 }
 
 #pragma mark -
 #pragma mark Setters and getters
+
+- (CGFloat)margin
+{
+    return _margin;
+}
+
+- (void)setMargin:(CGFloat)margin
+{
+    if (margin != _margin)
+    {
+        _margin = margin;
+        [self setNeedsDisplay];
+    }
+}
+
+- (BOOL)isMultiline
+{
+    return _multiline;
+}
+
+- (void)setMultiline:(BOOL)multiline
+{
+    if (multiline != _multiline)
+    {
+        _multiline = multiline;
+        [self setNeedsDisplay];
+    }
+}
 
 - (NSString *)text
 {

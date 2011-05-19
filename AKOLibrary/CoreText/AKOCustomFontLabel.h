@@ -45,6 +45,8 @@
     UIColor *_shadowColor;
     CGSize _shadowOffset;
     AKOCustomFontLabel *_shadowSubview;
+    BOOL _multiline;
+    CGFloat _margin;
 }
 
 /**
@@ -66,6 +68,17 @@
  The offset of the shadow of the text in the label.
  */
 @property (nonatomic, assign) CGSize shadowOffset;
+
+/**
+ Specifies whether the current instance displays text in several lines or not.
+ */
+@property (nonatomic, getter = isMultiline) BOOL multiline;
+
+/**
+ Margin used to draw multiline strings.
+ The default value is 10.0.
+ */
+@property (nonatomic) CGFloat margin;
 
 /**
  Returns the CTFontRef object used to format the text in the label.
