@@ -26,6 +26,9 @@
 		3A1FF30B1381192E00A94C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1FF2EB138118CC00A94C87 /* UIKit.framework */; };
 		3A1FF30C1381192E00A94C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A91D83D13808FC4006BBC46 /* Foundation.framework */; };
 		3A1FF30D1381192E00A94C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1FF2EA138118CC00A94C87 /* CoreGraphics.framework */; };
+		3A2BC92613855EE100B87225 /* SoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2BC92413855EE100B87225 /* SoundEffect.h */; };
+		3A2BC92713855EE100B87225 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BC92513855EE100B87225 /* SoundEffect.m */; };
+		3A2BC92A13855EF200B87225 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2BC92913855EF200B87225 /* AudioToolbox.framework */; };
 		3A3EB307138109E900FD02C4 /* AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2B8138109E900FD02C4 /* AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB308138109E900FD02C4 /* AKOLibrary_CoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB309138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -168,6 +171,9 @@
 		3A1FF30A1381192E00A94C87 /* AKOLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKOLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1FF3101381192E00A94C87 /* AKOLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKOLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		3A1FF3141381192E00A94C87 /* AKOLibraryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKOLibraryTests-Prefix.pch"; sourceTree = "<group>"; };
+		3A2BC92413855EE100B87225 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		3A2BC92513855EE100B87225 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		3A2BC92913855EF200B87225 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3A3EB2B8138109E900FD02C4 /* AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary.h; sourceTree = "<group>"; };
 		3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_CoreData.h; sourceTree = "<group>"; };
 		3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+AKOLibrary.h"; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3EB3C413810A7F00FD02C4 /* libz.1.2.3.dylib in Frameworks */,
+				3A2BC92A13855EF200B87225 /* AudioToolbox.framework in Frameworks */,
 				3A1FF2EC138118CC00A94C87 /* CoreGraphics.framework in Frameworks */,
 				3A1FF2ED138118CC00A94C87 /* UIKit.framework in Frameworks */,
 				3A3EB3C013810A7F00FD02C4 /* CFNetwork.framework in Frameworks */,
@@ -353,6 +360,15 @@
 				3A1FF3141381192E00A94C87 /* AKOLibraryTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A2BC92313855EE100B87225 /* SoundEffect */ = {
+			isa = PBXGroup;
+			children = (
+				3A2BC92413855EE100B87225 /* SoundEffect.h */,
+				3A2BC92513855EE100B87225 /* SoundEffect.m */,
+			);
+			path = SoundEffect;
 			sourceTree = "<group>";
 		};
 		3A3EB2B9138109E900FD02C4 /* CoreData */ = {
@@ -508,6 +524,7 @@
 		3A3EB36A13810A1400FD02C4 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3A2BC92313855EE100B87225 /* SoundEffect */,
 				3A3EB36B13810A1400FD02C4 /* ASIHTTPRequest */,
 				3A3EB38013810A1400FD02C4 /* JSONKit */,
 				3A3EB38313810A1400FD02C4 /* Reachability */,
@@ -631,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3EB3BA13810A7F00FD02C4 /* libz.1.2.3.dylib */,
+				3A2BC92913855EF200B87225 /* AudioToolbox.framework */,
 				3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */,
 				3A3EB3B713810A7F00FD02C4 /* CoreData.framework */,
 				3A1FF2EA138118CC00A94C87 /* CoreGraphics.framework */,
@@ -712,6 +730,7 @@
 				3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */,
 				3A3EB3B013810A1400FD02C4 /* NSDataAdditions.h in Headers */,
 				3A3EB3B313810A1400FD02C4 /* TBXML.h in Headers */,
+				3A2BC92613855EE100B87225 /* SoundEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +926,7 @@
 				3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */,
 				3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */,
 				3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */,
+				3A2BC92713855EE100B87225 /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
