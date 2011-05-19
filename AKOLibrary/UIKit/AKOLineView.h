@@ -37,4 +37,6 @@ typedef enum {
 @property (nonatomic) CGFloat width;
 @property (nonatomic) AKOLineViewMode mode;
 
+- (void)setup;
+
 @end

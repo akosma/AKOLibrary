@@ -36,12 +36,27 @@
     self = [super initWithFrame:frame];
     if (self) 
     {
-        _strokeWidth = 1.0;
-        _style = AKOCircleViewStyleDefault;
-        _fillColor = [[UIColor whiteColor] retain];
-        _strokeColor = [[UIColor blackColor] retain];
+        [self setup];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    _strokeWidth = 1.0;
+    _style = AKOCircleViewStyleDefault;
+    _fillColor = [[UIColor whiteColor] retain];
+    _strokeColor = [[UIColor blackColor] retain];
 }
 
 - (void)dealloc 

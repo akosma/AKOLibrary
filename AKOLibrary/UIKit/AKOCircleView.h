@@ -36,4 +36,6 @@ typedef enum {
 @property (nonatomic, retain) UIColor *fillColor;
 @property (nonatomic, retain) UIColor *strokeColor;
 
+- (void)setup;
+
 @end

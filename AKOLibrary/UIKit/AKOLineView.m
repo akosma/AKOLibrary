@@ -36,20 +36,35 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        _color = [[UIColor whiteColor] retain];
-        _width = 2.0;
-
-        // By default, it draws a straight line,
-        // the size of the width of this view.
-        NSMutableArray *points = [[NSMutableArray alloc] initWithCapacity:2];
-        NSValue *value1 = [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)];
-        [points addObject:value1];
-        NSValue *value2 = [NSValue valueWithCGPoint:CGPointMake(frame.size.width, 0.0)];
-        [points addObject:value2];
-
-        _points = points;
+        [self setup];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    _color = [[UIColor whiteColor] retain];
+    _width = 2.0;
+    
+    // By default, it draws a straight line,
+    // the size of the width of this view.
+    NSMutableArray *points = [[NSMutableArray alloc] initWithCapacity:2];
+    NSValue *value1 = [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)];
+    [points addObject:value1];
+    NSValue *value2 = [NSValue valueWithCGPoint:CGPointMake(self.frame.size.width, 0.0)];
+    [points addObject:value2];
+    
+    _points = points;
 }
 
 - (void)dealloc
