@@ -39,6 +39,7 @@
 @dynamic shadowColor;
 @dynamic multiline;
 @dynamic margin;
+@dynamic maximumLineHeight;
 
 #pragma mark -
 #pragma mark Init and dealloc
@@ -71,7 +72,7 @@
     self.text = @"";
     self.shadowColor = [UIColor whiteColor];
     self.shadowOffset = CGSizeMake(0,0);
-    self.margin = 10.0;
+    self.margin = 0.0;
 }
 
 - (void)dealloc 
@@ -116,9 +117,29 @@
         CTLineDraw(shadowLine, context);
     }
 
+    // Paragraph settings
+    CFIndex theNumberOfSettings = 6;
+    CTLineBreakMode lineBreakMode = kCTLineBreakByWordWrapping;
+    CTTextAlignment textAlignment = kCTLeftTextAlignment;
+    CGFloat indent = 0.0;
+    CGFloat spacing = 0.0;
+    CGFloat topSpacing = 0.0;
+    CGFloat maximumLineHeight = self.maximumLineHeight;
+    CTParagraphStyleSetting theSettings[6] =
+    {
+        { kCTParagraphStyleSpecifierAlignment, sizeof(CTTextAlignment), &textAlignment },
+        { kCTParagraphStyleSpecifierLineBreakMode, sizeof(CTLineBreakMode), &lineBreakMode },
+        { kCTParagraphStyleSpecifierFirstLineHeadIndent, sizeof(CGFloat), &indent },
+        { kCTParagraphStyleSpecifierParagraphSpacing, sizeof(CGFloat), &spacing },
+        { kCTParagraphStyleSpecifierParagraphSpacingBefore, sizeof(CGFloat), &topSpacing },
+        { kCTParagraphStyleSpecifierMaximumLineHeight, sizeof(CGFloat), &maximumLineHeight }
+    };
+    
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(theSettings, theNumberOfSettings);
+
     // Initialize string, font, and context
-    CFStringRef keys[] = { kCTFontAttributeName, kCTForegroundColorAttributeName };
-    CFTypeRef values[] = { [self font], self.textColor.CGColor };
+    CFStringRef keys[] = { kCTFontAttributeName, kCTForegroundColorAttributeName, kCTParagraphStyleAttributeName };
+    CFTypeRef values[] = { [self font], self.textColor.CGColor, paragraphStyle };
     
     CFDictionaryRef attributes =
     CFDictionaryCreate(kCFAllocatorDefault, (const void**)&keys,
@@ -142,7 +163,6 @@
     }
     else
     {
-        
         CTLineRef line = CTLineCreateWithAttributedString(attrString);
 
         // Add an ellipsis at the end, if required
@@ -171,6 +191,20 @@
 
 #pragma mark -
 #pragma mark Setters and getters
+
+- (CGFloat)maximumLineHeight
+{
+    return _maximumLineHeight;
+}
+
+- (void)setMaximumLineHeight:(CGFloat)maximumLineHeight
+{
+    if (maximumLineHeight != _maximumLineHeight)
+    {
+        _maximumLineHeight = maximumLineHeight;
+        [self setNeedsDisplay];
+    }
+}
 
 - (CGFloat)margin
 {

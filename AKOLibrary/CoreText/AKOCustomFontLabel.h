@@ -47,6 +47,7 @@
     AKOCustomFontLabel *_shadowSubview;
     BOOL _multiline;
     CGFloat _margin;
+    CGFloat _maximumLineHeight;
 }
 
 /**
@@ -76,9 +77,14 @@
 
 /**
  Margin used to draw multiline strings.
- The default value is 10.0.
+ The default value is 0.0.
  */
 @property (nonatomic) CGFloat margin;
+
+/**
+ The maximum line height of the text to be rendered.
+ */
+@property (nonatomic) CGFloat maximumLineHeight;
 
 /**
  Returns the CTFontRef object used to format the text in the label.
