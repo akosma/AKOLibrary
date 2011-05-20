@@ -25,6 +25,14 @@
 #import "SynthesizeSingleton.h"
 
 
+@interface AKOFileSystemManager ()
+
+@property (nonatomic, assign) NSFileManager *fileManager;
+
+@end
+
+
+
 @implementation AKOFileSystemManager
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(AKOFileSystemManager)
@@ -54,7 +62,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKOFileSystemManager)
 
 - (NSString *)applicationDocumentsDirectory
 {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    static NSString *path;
+    if (path == nil)
+    {
+        NSArray *array = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
+                                                             NSUserDomainMask, 
+                                                             YES);
+        path = [array lastObject];
+    }
+    return path;
 }
 
 @end

@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOFileSystemManager.h
+ Contains the definition of the AKOFileSystemManager class.
+ */
+
 #import <Foundation/Foundation.h>
 
 
@@ -29,9 +34,15 @@
  */
 @interface AKOFileSystemManager : NSObject 
 
-@property (nonatomic, assign) NSFileManager *fileManager;
+/**
+ Contains the value of the application documents directory of the current app.
+ */
 @property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 
+/**
+ Returns a pointer to the singleton instance of this class.
+ @return A pointer to the singleton instance of this class.
+ */
 + (AKOFileSystemManager *)sharedAKOFileSystemManager;
 
 @end
