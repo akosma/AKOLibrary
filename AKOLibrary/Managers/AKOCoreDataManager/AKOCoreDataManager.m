@@ -22,31 +22,30 @@
 //
 
 #import "AKOCoreDataManager.h"
-#import "SynthesizeSingleton.h"
 #import "AKOFileSystemManager.h"
 
 @interface AKOCoreDataManager ()
 
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, copy) NSString *fileName;
 
 @end
 
 
 @implementation AKOCoreDataManager
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(AKOCoreDataManager)
-
 @synthesize fileName = _fileName;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectContext = _managedObjectContext;
 
-- (id)init
+- (id)initWithFilename:(NSString *)name
 {
     self = [super init];
     if (self)
     {
+        _fileName = [name copy];
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(objectChanged:) 
                                                      name:NSManagedObjectContextDidSaveNotification

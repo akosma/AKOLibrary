@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_Managers_notifications.h
+ Includes the header files of all the managers defined in the library.
+ */
+
 #import "AKOLibrary_Managers_notifications.h"
 #import "AKOFileSystemManager.h"
 #import "AKOCoreDataManager.h"

@@ -21,24 +21,33 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOCoreDataManager.h
+ Contains the definition of the AKOCoreDataManager class.
+ */
+
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 /**
  Encapsulates all interactions with the local Core Data store.
- This singleton class provides a unique interface to modify
- the SQLite data store where all the objects retrieved from the network are stored
- for offline consumption.
+ This class provides a unique interface to modify the SQLite data store 
+ of the current application. Consumers of this class should subclass it
+ and, if required, create a singleton instance of it.
  */
 @interface AKOCoreDataManager : NSObject 
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, copy) NSString *fileName;
 
 /**
- Returns a pointer to the singleton instance of this class.
+ Initializer of the class.
+ This method takes a single parameter, the filename of the data model
+ used by this instance. This name corresponds usually to the .mom file created
+ in Xcode, and also the SQLite file created by Core Data.
+ @param name The name of the momd file of the application
+ @return A newly created instance of this class.
  */
-+ (AKOCoreDataManager *)sharedAKOCoreDataManager;
+- (id)initWithFilename:(NSString *)name;
 
 /**
  Saves the whole data graph in memory to the SQLite store.
