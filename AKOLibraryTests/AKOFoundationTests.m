@@ -330,6 +330,22 @@
     STAssertFalse(equal, @"Consecutive random strings should be different");
 }
 
+- (void)testRandomStringSizes
+{
+    for (NSInteger index = 0; index < 100; ++index)
+    {
+        NSString *random1 = [NSString ako_randomString];
+        NSInteger length1 = [random1 length];
+        BOOL shorter = (length1 <= 16);
+        STAssertTrue(shorter, @"A random string should be shorter than 16 characters, received %d", length1);
+        
+        NSString *random2 = [NSString ako_randomString];
+        NSInteger length2 = [random2 length];
+        BOOL longer = (length2 >= 5);
+        STAssertTrue(longer, @"A random string should be longer than 5 characters, received %d", length2);
+    }
+}
+
 - (void)testSHADigest
 {
     NSString *someText = @"Here goes some text to test";

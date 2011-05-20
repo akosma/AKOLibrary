@@ -24,20 +24,83 @@
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonDigest.h>
 
+/**
+ @file NSString+AKOLibrary.h
+ Contains several extensions to the NSString class.
+ */
 
-@interface NSString (AKOLibrary)
+/**
+ @category NSString(AKOLibrary)
+ Set of extension methods on the NSString class.
+ */
+@interface NSString(AKOLibrary)
 
-+ (NSString *)ako_randomStringOfLength:(int)length;
+/**
+ Creates a random string of the specified length.
+ The string created by this method mixes uppercase and lowercase parameters,
+ as well as numbers, spaces and other symbols.
+ @param length The length of the required random string.
+ @return An NSString object.
+ */
++ (NSString *)ako_randomStringOfLength:(NSInteger)length;
+
+/**
+ Returns a random string of random length.
+ The random string returned by this method has between 5 and 16 characters.
+ @return A random NSString object.
+ */
 + (NSString *)ako_randomString;
-+ (NSString *)ako_stringFromFileNamed:(NSString *)bundleFileName;
 
+/**
+ Returns a string that contains the text of a file located in the current bundle.
+ @param bundleFileName The filename of the text file in the resources.
+ @return An NSString with the contents of the file.
+ */
++ (NSString *)ako_stringFromResourceNamed:(NSString *)bundleFileName;
+
+/**
+ Returns a string that contains the text of a file located in the file system.
+ @param path The filename of the text file in the local file system.
+ @return An NSString with the contents of the file.
+ */
++ (NSString *)ako_stringFromFileAtPath:(NSString *)path;
+
+/**
+ Returns a string with the SHA hash of the current instance.
+ @return An NSString instance.
+ */
 - (NSString *)ako_SHADigest;
+
+/**
+ Returns a string with the MD5 hash of the current instance.
+ @return An NSString instance.
+ */
 - (NSString *)ako_MD5Digest;
+
+/**
+ Returns a string with the first letter capitalized.
+ The rest of the string remains unchanged.
+ @return A capitalized NSString intance.
+ */
 - (NSString *)ako_stringWithFirstLetterCapitalized;
 
+/**
+ Returns the NSDate that corresponds to the current string.
+ @param format The format to be used during formatting.
+ @return An NSDate object.
+ */
 - (NSDate *)ako_dateWithFormat:(NSString *)format;
 
+/**
+ Returns the URL-encoded version of the current instance.
+ @return An URL-encoded string.
+ */
 - (NSString *)ako_URLEncode;
+
+/**
+ Performs a URL-decoding version of the current instance.
+ @return A string without URL encoding.
+ */
 - (NSString *)ako_URLDecode;
 
 @end

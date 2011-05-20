@@ -23,9 +23,9 @@
 
 #import "NSString+AKOLibrary.h"
 
-@implementation NSString (AKOLibrary)
+@implementation NSString(AKOLibrary)
 
-+ (NSString *)ako_randomStringOfLength:(int)length
++ (NSString *)ako_randomStringOfLength:(NSInteger)length
 {
     // Adapted from 
     // http://stackoverflow.com/questions/2633801/generate-a-random-alphanumeric-string-in-cocoa
@@ -48,9 +48,17 @@
     return [[self class] ako_randomStringOfLength:length];
 }
 
-+ (NSString *)ako_stringFromFileNamed:(NSString *)bundleFileName
++ (NSString *)ako_stringFromResourceNamed:(NSString *)bundleFileName
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:bundleFileName ofType:nil];
+    NSString *text = [NSString stringWithContentsOfFile:path
+                                               encoding:NSUTF8StringEncoding
+                                                  error:nil];
+    return text;
+}
+
++ (NSString *)ako_stringFromFileAtPath:(NSString *)path;
+{
     NSString *text = [NSString stringWithContentsOfFile:path
                                                encoding:NSUTF8StringEncoding
                                                   error:nil];
