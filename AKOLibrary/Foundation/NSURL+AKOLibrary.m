@@ -25,7 +25,7 @@
 #import "NSString+AKOLibrary.h"
 
 
-@implementation NSURL (AKOLibrary)
+@implementation NSURL(AKOLibrary)
 
 + (NSURL *)ako_fileURLForFilename:(NSString *)filename
 {
