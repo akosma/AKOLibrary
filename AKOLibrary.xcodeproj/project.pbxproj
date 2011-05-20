@@ -464,10 +464,10 @@
 		3A3EB2E2138109E900FD02C4 /* AKONetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				3A3EB2E3138109E900FD02C4 /* AKOBaseRequest.h */,
-				3A3EB2E4138109E900FD02C4 /* AKOBaseRequest.m */,
 				3A3EB2E5138109E900FD02C4 /* AKONetworkManager.h */,
 				3A3EB2E6138109E900FD02C4 /* AKONetworkManager.m */,
+				3A3EB2E3138109E900FD02C4 /* AKOBaseRequest.h */,
+				3A3EB2E4138109E900FD02C4 /* AKOBaseRequest.m */,
 				3A3EB2E7138109E900FD02C4 /* AKORSSRequest.h */,
 				3A3EB2E8138109E900FD02C4 /* AKORSSRequest.m */,
 			);
