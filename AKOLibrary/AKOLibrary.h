@@ -53,6 +53,8 @@
  @li @subpage pageBuild "Build"
  @li @subpage pageDocumentation "Documentation"
  @li @subpage pageTests "Tests"
+ @li @subpage pageExtending "Extending the Library"
+ @li @subpage pageUsing "Using the Library"
  */
 
 /**
@@ -108,4 +110,47 @@
  iPhone Simulator app, and then run the tests.
  
  To see the test results, open the console in Xcode 4.
+ */
+
+/**
+ @page pageExtending Extending the Library
+ 
+ To add more functionality in the AKOLibrary, follow these steps:
+ 
+ @li Add a new folder with classes in the AKOLibrary group.
+ @li Alternatively, you can add or create new classes in a pre-existing
+ group or folder.
+ @li Add any new files to the "AKOLibrary" target.
+ @li Build using the "Universal_Framework" scheme and make sure everything works.
+ @li Run the tests.
+ @li Add a new header file for the group (if required), similar to the files
+ "AKOLibrary_Video.h".
+ @li Add the new header file for the group in the AKOLibrary.h file.
+ @li Select the project icon, select the AKOLibrary target, and in the 
+ "Build Phases" tab add the required frameworks to the project ("Link Binary 
+ with Libraries"). Also, make any new header files publicly visible in the same
+ pane ("Copy Headers").
+ @li Select the "Product / Archive" menu.
+ @li When the compilation is ready, open the "Products" group and right-click
+ on the AKOLibrary.framework product. Select "Show in Finder".
+ @li In the window that appears, go back a few levels in the folder hierarchy
+ and select the folder "ArchiveIntermediates / Universal_Framework / 
+ BuildProductsPath / Release-universal". In that folder you will find
+ the freshly created AKOLibrary.framework bundle.
+ */
+
+/**
+ @page pageUsing Using the Library
+ 
+ To use the library in a project, follow these steps:
+ 
+ @li Import the AKOLibrary.framework bundle in your app. Choose to explicitly
+ copy it into the project.
+ @li Select the project icon, select the main target and select the "Build Phases"
+ tab. Add the following frameworks in your project: libz.1.2.3.dylib, MapKit, 
+ MediaPlayer, AudioToolbox, CFNetwork, CoreData, CoreGraphics, CoreText, Foundation,
+ MobileCoreServices, QuartzCore, Security, SystemConfiguration, UIKit.
+ @in In the "Build Settings" tab, select the "Other Linker Flags" entry and
+ add the "-all_load" flag.
+ @li In your source files, use the #import <AKOLibrary/AKOLibrary.h> header.
  */

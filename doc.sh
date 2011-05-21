@@ -45,7 +45,7 @@ echo subfolder.
 echo You can also open the following documentation files:
 echo - Documentation/latex/refman.pdf
 echo - Documentation/html/index.html
-echo - Documentation/html/ch.swissinfo.iPad.docset - to be opened with Xcode
+echo - Documentation/html/com.akosma.AKOLibrary.docset - to be displayed within Xcode
 echo - Documentation/rtf/refman.rtf
 echo =========================================================
 
