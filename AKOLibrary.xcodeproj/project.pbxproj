@@ -157,6 +157,10 @@
 		3A709D041381217E00F091F5 /* NSURL+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2D6138109E900FD02C4 /* NSURL+AKOLibrary.m */; };
 		3A709D051381219B00F091F5 /* AKOLibrary_Foundation_functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2CA138109E900FD02C4 /* AKOLibrary_Foundation_functions.m */; };
 		3A709D06138122A400F091F5 /* AKOPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2EB138109E900FD02C4 /* AKOPreferencesManager.m */; };
+		3A75FD971387C0D70048B8AF /* MKMapView+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A75FD951387C0D70048B8AF /* MKMapView+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A75FD981387C0D70048B8AF /* MKMapView+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A75FD961387C0D70048B8AF /* MKMapView+AKOLibrary.m */; };
+		3A75FD9A1387C0E50048B8AF /* AKOLibrary_MapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A75FD991387C0E50048B8AF /* AKOLibrary_MapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A75FD9C1387C1DC0048B8AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A75FD9B1387C1DC0048B8AF /* MapKit.framework */; };
 		3A94AA531381AA000079E5A4 /* AKOLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4D1381AA000079E5A4 /* AKOLineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA541381AA000079E5A4 /* AKOLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA4E1381AA000079E5A4 /* AKOLineView.m */; };
 		3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA4F1381AA000079E5A4 /* AKOArrowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -290,6 +294,10 @@
 		3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTests.m; sourceTree = "<group>"; };
 		3A709CFC1381211200F091F5 /* AKOFoundationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFoundationTests.h; sourceTree = "<group>"; };
 		3A709CFD1381211200F091F5 /* AKOFoundationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOFoundationTests.m; sourceTree = "<group>"; };
+		3A75FD951387C0D70048B8AF /* MKMapView+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+AKOLibrary.h"; sourceTree = "<group>"; };
+		3A75FD961387C0D70048B8AF /* MKMapView+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+AKOLibrary.m"; sourceTree = "<group>"; };
+		3A75FD991387C0E50048B8AF /* AKOLibrary_MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_MapKit.h; sourceTree = "<group>"; };
+		3A75FD9B1387C1DC0048B8AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A8512DA138263E1004270F9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3A8512DC138263E7004270F9 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		3A91D82913808FC4006BBC46 /* AKOLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKOLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3EB3C413810A7F00FD02C4 /* libz.1.2.3.dylib in Frameworks */,
+				3A75FD9C1387C1DC0048B8AF /* MapKit.framework in Frameworks */,
 				3AAB417013866A8E00368CB4 /* MediaPlayer.framework in Frameworks */,
 				3A2BC92A13855EF200B87225 /* AudioToolbox.framework in Frameworks */,
 				3A1FF2EC138118CC00A94C87 /* CoreGraphics.framework in Frameworks */,
@@ -607,6 +616,16 @@
 			path = TBXML;
 			sourceTree = "<group>";
 		};
+		3A75FD941387C0D70048B8AF /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				3A75FD991387C0E50048B8AF /* AKOLibrary_MapKit.h */,
+				3A75FD951387C0D70048B8AF /* MKMapView+AKOLibrary.h */,
+				3A75FD961387C0D70048B8AF /* MKMapView+AKOLibrary.m */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
 		3A91D81C13808FC4006BBC46 = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +656,7 @@
 				3A3EB2BD138109E900FD02C4 /* CoreText */,
 				3A3EB2C7138109E900FD02C4 /* Foundation */,
 				3A3EB2D8138109E900FD02C4 /* Managers */,
+				3A75FD941387C0D70048B8AF /* MapKit */,
 				3A3EB2EC138109E900FD02C4 /* QuartzCore */,
 				3A3EB2F2138109E900FD02C4 /* UIKit */,
 				3AAB418C13866BEB00368CB4 /* Video */,
@@ -658,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3EB3BA13810A7F00FD02C4 /* libz.1.2.3.dylib */,
+				3A75FD9B1387C1DC0048B8AF /* MapKit.framework */,
 				3AAB416F13866A8E00368CB4 /* MediaPlayer.framework */,
 				3A2BC92913855EF200B87225 /* AudioToolbox.framework */,
 				3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */,
@@ -754,6 +775,8 @@
 				3AAB418F13866BEB00368CB4 /* AKOFullScreenVideoController.h in Headers */,
 				3AAB419213866BF600368CB4 /* AKOLibrary_Video.h in Headers */,
 				3A3EB3B313810A1400FD02C4 /* TBXML.h in Headers */,
+				3A75FD971387C0D70048B8AF /* MKMapView+AKOLibrary.h in Headers */,
+				3A75FD9A1387C0E50048B8AF /* AKOLibrary_MapKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,6 +974,7 @@
 				3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */,
 				3A2BC92713855EE100B87225 /* SoundEffect.m in Sources */,
 				3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */,
+				3A75FD981387C0D70048B8AF /* MKMapView+AKOLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

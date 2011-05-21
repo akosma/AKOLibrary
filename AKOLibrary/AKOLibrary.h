@@ -34,6 +34,7 @@
 #import "AKOLibrary_QuartzCore.h"
 #import "AKOLibrary_UIKit.h"
 #import "AKOLibrary_Managers.h"
+#import "AKOLibrary_MapKit.h"
 #import "AKOLibrary_Video.h"
 
 /**
