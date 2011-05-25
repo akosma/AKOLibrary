@@ -47,6 +47,12 @@
 + (NSDate *)ako_randomDateBetween2001AndNow;
 
 /**
+ Returns the current date without a time component.
+ @return An NSDate representing the current moment, without time information.
+ */
++ (NSDate *)ako_dateWithoutTime;
+
+/**
  Returns a string that represents the current date using the current locale.
  This method returns a string that does only contain date information, 
  without any time information.
@@ -70,5 +76,48 @@
  @return An NSString instance.
  */
 - (NSString *)ako_weekday;
+
+/**
+ Returns the date obtained by adding a certain number of days to the current instance.
+ @return An NSDate object.
+ */
+- (NSDate *)ako_dateByAddingDays:(NSInteger)numDays;
+
+/**
+ Returns a date derived from the current instance that does not contain a time component.
+ @return An NSDate representing the current instance, without time information.
+ */
+- (NSDate *)ako_dateAsDateWithoutTime;
+
+/**
+ Returns the difference in days that separate the current instance to the one passed as parameter.
+ @return An NSInteger value.
+ */
+- (NSInteger)ako_differenceInDaysTo:(NSDate *)toDate;
+
+/**
+ Returns a simple string representation of the current instance.
+ @return A string formatted using the "MMM dd, yyyy" format.
+ */
+- (NSString *)ako_formattedDateString;
+
+/**
+ Returns a string representing the current date, formatted using the format passed as parameter.
+ @param dateFormat The format to use for the representation.
+ @return An NSString object.
+ */
+- (NSString *)ako_formattedStringUsingFormat:(NSString *)dateFormat;
+
+/**
+ Returns the object corresponding to the following day of the current instance at midnight.
+ @return An NSDate instance.
+ */
+- (NSDate *)ako_followingDayAtMidnight;
+
+/**
+ Returns the object corresponding to the current instance at midnight.
+ @return An NSDate instance.
+ */
+- (NSDate *)ako_thisDayAtMidnight;
 
 @end
