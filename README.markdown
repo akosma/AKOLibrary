@@ -7,8 +7,6 @@ AKOLibrary
 This library exposes functionality and classes used in many applications
 developed by akosma software.
 
----
-
 Build
 -----
 
@@ -32,8 +30,6 @@ Open the AKOLibrary.xcodeproj file with Xcode 4.0.2, select the
 "Universal_Framework | iOS Device" scheme, and select the "Product /
 Build" menu entry. The solution should compile without problems.
 
----
-
 Documentation
 -------------
 
@@ -54,19 +50,15 @@ Open the image file and execute the installer inside. This will install
 all the  required tools to generate PDF files from the Doxygen
 documentation.
 
----
-
 ### Tests
 
 The AKOLibrary is bundled with a large suite of tests. 
 
-To run the tests, select the "Universal_Framework | iOS Device" scheme,
+To run the tests, select the `"Universal_Framework | iOS Device"` scheme,
 and select  the "Product / Test" menu entry. This will launch the iPhone
 Simulator app, and then run the tests.
 
 To see the test results, open the console in Xcode 4.
-
----
 
 Extending the Library
 ---------------------
@@ -77,11 +69,11 @@ To add more functionality in the AKOLibrary, follow these steps:
 - Alternatively, you can add or create new classes in a pre-existing
   group or folder.
 - Add any new files to the "AKOLibrary" target.
-- Build using the "Universal_Framework" scheme and make sure everything
+- Build using the `"Universal_Framework"` scheme and make sure everything
   works.
 - Run the tests.
 - Add a new header file for the group (if required), similar to the
-  files "AKOLibrary_Video.h".
+  files `"AKOLibrary_Video.h"`.
 - Add the new header file for the group in the AKOLibrary.h file.
 - Select the project icon, select the AKOLibrary target, and in the
   "Build Phases" tab add the required frameworks to the project ("Link
@@ -95,8 +87,6 @@ To add more functionality in the AKOLibrary, follow these steps:
   hierarchy and select the folder `"ArchiveIntermediates /
   Universal_Framework / BuildProductsPath / Release-universal"`. In that
   folder you will find the freshly created AKOLibrary.framework bundle.
-
----
 
 Using the Library
 -----------------
