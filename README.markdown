@@ -87,13 +87,13 @@ To add more functionality in the AKOLibrary, follow these steps:
   "Build Phases" tab add the required frameworks to the project ("Link
   Binary with Libraries"). Also, make any new header files publicly
   visible in the same pane ("Copy Headers").
-- Select the "Product / Archive" menu.
+- Select the `"Product / Archive"` menu.
 - When the compilation is ready, open the "Products" group and
-  right-click on the AKOLibrary.framework product. Select "Show in
-  Finder".
+  right-click on the AKOLibrary.framework product. Select `"Show in
+  Finder"`.
 - In the window that appears, go back a few levels in the folder
-  hierarchy and select the folder "ArchiveIntermediates /
-  Universal_Framework / BuildProductsPath / Release-universal". In that
+  hierarchy and select the folder `"ArchiveIntermediates /
+  Universal_Framework / BuildProductsPath / Release-universal"`. In that
   folder you will find the freshly created AKOLibrary.framework bundle.
 
 ---
@@ -109,9 +109,9 @@ To use the library in a project, follow these steps:
   Phases" tab. Add the following frameworks in your project:
   libz.1.2.3.dylib, MapKit, MediaPlayer, AudioToolbox, CFNetwork,
   CoreData, CoreGraphics, CoreText, Foundation, MobileCoreServices,
-  QuartzCore, Security, SystemConfiguration, UIKit.  @in In the "Build
+  QuartzCore, Security, SystemConfiguration, UIKit. In the "Build
   Settings" tab, select the "Other Linker Flags" entry and add the
-  "-all_load" flag.
-- In your source files, use the #import <AKOLibrary/AKOLibrary.h>
+  `"-all_load"` flag.
+- In your source files, use the `#import <AKOLibrary/AKOLibrary.h>`
   header.
 
