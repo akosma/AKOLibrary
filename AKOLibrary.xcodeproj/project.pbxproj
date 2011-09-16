@@ -137,6 +137,7 @@
 		3A3EB3C813810A7F00FD02C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */; };
 		3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */; };
+		3A60091D142374E6003B5B43 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 3A60091C142374E6003B5B43 /* README.markdown */; };
 		3A709CD213811B0800F091F5 /* AKOCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */; };
 		3A709CF213811D5100F091F5 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BA13810A7F00FD02C4 /* libz.1.2.3.dylib */; };
 		3A709CF313811D5400F091F5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
@@ -290,6 +291,7 @@
 		3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AKOLibrary.h"; sourceTree = "<group>"; };
 		3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AKOLibrary.m"; sourceTree = "<group>"; };
+		3A60091C142374E6003B5B43 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		3A709CD013811B0800F091F5 /* AKOCoreDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCoreDataTests.h; sourceTree = "<group>"; };
 		3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTests.m; sourceTree = "<group>"; };
 		3A709CFC1381211200F091F5 /* AKOFoundationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFoundationTests.h; sourceTree = "<group>"; };
@@ -299,7 +301,6 @@
 		3A75FD991387C0E50048B8AF /* AKOLibrary_MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_MapKit.h; sourceTree = "<group>"; };
 		3A75FD9B1387C1DC0048B8AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A8512DA138263E1004270F9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		3A8512DC138263E7004270F9 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		3A91D82913808FC4006BBC46 /* AKOLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKOLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A91D82F13808FC4006BBC46 /* AKOLibrary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKOLibrary-Info.plist"; sourceTree = "<group>"; };
 		3A91D83313808FC4006BBC46 /* AKOLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKOLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -635,7 +636,7 @@
 				3A91D83A13808FC4006BBC46 /* Frameworks */,
 				3A91D82A13808FC4006BBC46 /* Products */,
 				3A8512DA138263E1004270F9 /* LICENSE */,
-				3A8512DC138263E7004270F9 /* README.textile */,
+				3A60091C142374E6003B5B43 /* README.markdown */,
 			);
 			sourceTree = "<group>";
 		};
@@ -856,6 +857,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A60091D142374E6003B5B43 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
