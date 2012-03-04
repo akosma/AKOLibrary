@@ -22,7 +22,7 @@
 //
 
 #import "AKOBaseRequest.h"
-#import "JSONKit.h"
+#import "NXJsonParser.h"
 #import "AKOLibrary_Foundation_functions.h"
 #import "UIDevice+AKOLibrary.h"
 
@@ -105,7 +105,7 @@ static NSString *AKOBaseRequestHeaderDeviceKindKey = @"AKOBaseRequestHeaderDevic
 - (id)processResponse
 {
     NSData *data = [self responseData];
-    NSDictionary *dict = [data objectFromJSONData];
+    NSDictionary *dict = [NXJsonParser parseData:data error:nil ignoreNulls:YES];
     return dict;
 }
 

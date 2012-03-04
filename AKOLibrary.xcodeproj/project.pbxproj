@@ -118,8 +118,6 @@
 		3A3EB3A513810A1400FD02C4 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB37D13810A1400FD02C4 /* ASINetworkQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB3A613810A1400FD02C4 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB37E13810A1400FD02C4 /* ASINetworkQueue.m */; };
 		3A3EB3A813810A1400FD02C4 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB37F13810A1400FD02C4 /* ASIProgressDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB3A913810A1400FD02C4 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38113810A1400FD02C4 /* JSONKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB3AA13810A1400FD02C4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB38213810A1400FD02C4 /* JSONKit.m */; };
 		3A3EB3AC13810A1400FD02C4 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38413810A1400FD02C4 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB3AD13810A1400FD02C4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB38513810A1400FD02C4 /* Reachability.m */; };
 		3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38713810A1400FD02C4 /* SynthesizeSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,6 +167,15 @@
 		3AAB419213866BF600368CB4 /* AKOLibrary_Video.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB419113866BF600368CB4 /* AKOLibrary_Video.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DA1503527400FF5F0F /* TBXML.h */; };
 		3ACFD7DD1503527400FF5F0F /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7DB1503527400FF5F0F /* TBXML.m */; };
+		3ACFD7E81503539900FF5F0F /* NSError+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DF1503539900FF5F0F /* NSError+Extensions.h */; };
+		3ACFD7E91503539900FF5F0F /* NSError+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E01503539900FF5F0F /* NSError+Extensions.m */; };
+		3ACFD7EA1503539900FF5F0F /* NXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E11503539900FF5F0F /* NXDebug.h */; };
+		3ACFD7EB1503539900FF5F0F /* NXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E21503539900FF5F0F /* NXDebug.m */; };
+		3ACFD7EC1503539900FF5F0F /* NXJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E31503539900FF5F0F /* NXJsonParser.h */; };
+		3ACFD7ED1503539900FF5F0F /* NXJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E41503539900FF5F0F /* NXJsonParser.m */; };
+		3ACFD7EE1503539900FF5F0F /* NXJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E51503539900FF5F0F /* NXJsonSerializer.h */; };
+		3ACFD7EF1503539900FF5F0F /* NXJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E61503539900FF5F0F /* NXJsonSerializer.m */; };
+		3ACFD7F01503539900FF5F0F /* NXSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E71503539900FF5F0F /* NXSerializable.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -269,8 +276,6 @@
 		3A3EB37D13810A1400FD02C4 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		3A3EB37E13810A1400FD02C4 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		3A3EB37F13810A1400FD02C4 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		3A3EB38113810A1400FD02C4 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		3A3EB38213810A1400FD02C4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		3A3EB38413810A1400FD02C4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3A3EB38513810A1400FD02C4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3A3EB38713810A1400FD02C4 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
@@ -310,6 +315,15 @@
 		3AAB419113866BF600368CB4 /* AKOLibrary_Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_Video.h; sourceTree = "<group>"; };
 		3ACFD7DA1503527400FF5F0F /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		3ACFD7DB1503527400FF5F0F /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		3ACFD7DF1503539900FF5F0F /* NSError+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Extensions.h"; sourceTree = "<group>"; };
+		3ACFD7E01503539900FF5F0F /* NSError+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Extensions.m"; sourceTree = "<group>"; };
+		3ACFD7E11503539900FF5F0F /* NXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDebug.h; sourceTree = "<group>"; };
+		3ACFD7E21503539900FF5F0F /* NXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDebug.m; sourceTree = "<group>"; };
+		3ACFD7E31503539900FF5F0F /* NXJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXJsonParser.h; sourceTree = "<group>"; };
+		3ACFD7E41503539900FF5F0F /* NXJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXJsonParser.m; sourceTree = "<group>"; };
+		3ACFD7E51503539900FF5F0F /* NXJsonSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXJsonSerializer.h; sourceTree = "<group>"; };
+		3ACFD7E61503539900FF5F0F /* NXJsonSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXJsonSerializer.m; sourceTree = "<group>"; };
+		3ACFD7E71503539900FF5F0F /* NXSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSerializable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,9 +551,9 @@
 		3A3EB36A13810A1400FD02C4 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3ACFD7DE1503539900FF5F0F /* NextiveJson */,
 				3A2BC92313855EE100B87225 /* SoundEffect */,
 				3A3EB36B13810A1400FD02C4 /* ASIHTTPRequest */,
-				3A3EB38013810A1400FD02C4 /* JSONKit */,
 				3A3EB38313810A1400FD02C4 /* Reachability */,
 				3A3EB38613810A1400FD02C4 /* SynthesizeSingleton */,
 				3A3EB38813810A1400FD02C4 /* TBXML */,
@@ -572,15 +586,6 @@
 				3A3EB37F13810A1400FD02C4 /* ASIProgressDelegate.h */,
 			);
 			path = ASIHTTPRequest;
-			sourceTree = "<group>";
-		};
-		3A3EB38013810A1400FD02C4 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				3A3EB38113810A1400FD02C4 /* JSONKit.h */,
-				3A3EB38213810A1400FD02C4 /* JSONKit.m */,
-			);
-			path = JSONKit;
 			sourceTree = "<group>";
 		};
 		3A3EB38313810A1400FD02C4 /* Reachability */ = {
@@ -698,6 +703,22 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		3ACFD7DE1503539900FF5F0F /* NextiveJson */ = {
+			isa = PBXGroup;
+			children = (
+				3ACFD7DF1503539900FF5F0F /* NSError+Extensions.h */,
+				3ACFD7E01503539900FF5F0F /* NSError+Extensions.m */,
+				3ACFD7E11503539900FF5F0F /* NXDebug.h */,
+				3ACFD7E21503539900FF5F0F /* NXDebug.m */,
+				3ACFD7E31503539900FF5F0F /* NXJsonParser.h */,
+				3ACFD7E41503539900FF5F0F /* NXJsonParser.m */,
+				3ACFD7E51503539900FF5F0F /* NXJsonSerializer.h */,
+				3ACFD7E61503539900FF5F0F /* NXJsonSerializer.m */,
+				3ACFD7E71503539900FF5F0F /* NXSerializable.h */,
+			);
+			path = NextiveJson;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -760,7 +781,6 @@
 				3A94AA551381AA000079E5A4 /* AKOArrowView.h in Headers */,
 				3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */,
 				3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */,
-				3A3EB3A913810A1400FD02C4 /* JSONKit.h in Headers */,
 				3A3EB3AC13810A1400FD02C4 /* Reachability.h in Headers */,
 				3A2BC92613855EE100B87225 /* SoundEffect.h in Headers */,
 				3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */,
@@ -769,6 +789,11 @@
 				3A75FD971387C0D70048B8AF /* MKMapView+AKOLibrary.h in Headers */,
 				3A75FD9A1387C0E50048B8AF /* AKOLibrary_MapKit.h in Headers */,
 				3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */,
+				3ACFD7E81503539900FF5F0F /* NSError+Extensions.h in Headers */,
+				3ACFD7EA1503539900FF5F0F /* NXDebug.h in Headers */,
+				3ACFD7EC1503539900FF5F0F /* NXJsonParser.h in Headers */,
+				3ACFD7EE1503539900FF5F0F /* NXJsonSerializer.h in Headers */,
+				3ACFD7F01503539900FF5F0F /* NXSerializable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +985,6 @@
 				3A3EB39E13810A1400FD02C4 /* ASIHTTPRequest.m in Sources */,
 				3A3EB3A313810A1400FD02C4 /* ASIInputStream.m in Sources */,
 				3A3EB3A613810A1400FD02C4 /* ASINetworkQueue.m in Sources */,
-				3A3EB3AA13810A1400FD02C4 /* JSONKit.m in Sources */,
 				3A3EB3AD13810A1400FD02C4 /* Reachability.m in Sources */,
 				3A94AA541381AA000079E5A4 /* AKOLineView.m in Sources */,
 				3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */,
@@ -970,6 +994,10 @@
 				3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */,
 				3A75FD981387C0D70048B8AF /* MKMapView+AKOLibrary.m in Sources */,
 				3ACFD7DD1503527400FF5F0F /* TBXML.m in Sources */,
+				3ACFD7E91503539900FF5F0F /* NSError+Extensions.m in Sources */,
+				3ACFD7EB1503539900FF5F0F /* NXDebug.m in Sources */,
+				3ACFD7ED1503539900FF5F0F /* NXJsonParser.m in Sources */,
+				3ACFD7EF1503539900FF5F0F /* NXJsonSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
