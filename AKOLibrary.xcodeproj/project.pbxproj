@@ -123,10 +123,6 @@
 		3A3EB3AC13810A1400FD02C4 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38413810A1400FD02C4 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB3AD13810A1400FD02C4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB38513810A1400FD02C4 /* Reachability.m */; };
 		3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38713810A1400FD02C4 /* SynthesizeSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB3B013810A1400FD02C4 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38913810A1400FD02C4 /* NSDataAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB3B113810A1400FD02C4 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB38A13810A1400FD02C4 /* NSDataAdditions.m */; };
-		3A3EB3B313810A1400FD02C4 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB38B13810A1400FD02C4 /* TBXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB3B413810A1400FD02C4 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB38C13810A1400FD02C4 /* TBXML.m */; };
 		3A3EB3C013810A7F00FD02C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
 		3A3EB3C113810A7F00FD02C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B713810A7F00FD02C4 /* CoreData.framework */; };
 		3A3EB3C213810A7F00FD02C4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B813810A7F00FD02C4 /* CoreText.framework */; };
@@ -171,6 +167,8 @@
 		3AAB418F13866BEB00368CB4 /* AKOFullScreenVideoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB418D13866BEB00368CB4 /* AKOFullScreenVideoController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB418E13866BEB00368CB4 /* AKOFullScreenVideoController.m */; };
 		3AAB419213866BF600368CB4 /* AKOLibrary_Video.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB419113866BF600368CB4 /* AKOLibrary_Video.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DA1503527400FF5F0F /* TBXML.h */; };
+		3ACFD7DD1503527400FF5F0F /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7DB1503527400FF5F0F /* TBXML.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,10 +274,6 @@
 		3A3EB38413810A1400FD02C4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3A3EB38513810A1400FD02C4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3A3EB38713810A1400FD02C4 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		3A3EB38913810A1400FD02C4 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		3A3EB38A13810A1400FD02C4 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		3A3EB38B13810A1400FD02C4 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
-		3A3EB38C13810A1400FD02C4 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3EB3B713810A7F00FD02C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3A3EB3B813810A7F00FD02C4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -314,6 +308,8 @@
 		3AAB418D13866BEB00368CB4 /* AKOFullScreenVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFullScreenVideoController.h; sourceTree = "<group>"; };
 		3AAB418E13866BEB00368CB4 /* AKOFullScreenVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOFullScreenVideoController.m; sourceTree = "<group>"; };
 		3AAB419113866BF600368CB4 /* AKOLibrary_Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_Video.h; sourceTree = "<group>"; };
+		3ACFD7DA1503527400FF5F0F /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		3ACFD7DB1503527400FF5F0F /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,10 +603,8 @@
 		3A3EB38813810A1400FD02C4 /* TBXML */ = {
 			isa = PBXGroup;
 			children = (
-				3A3EB38913810A1400FD02C4 /* NSDataAdditions.h */,
-				3A3EB38A13810A1400FD02C4 /* NSDataAdditions.m */,
-				3A3EB38B13810A1400FD02C4 /* TBXML.h */,
-				3A3EB38C13810A1400FD02C4 /* TBXML.m */,
+				3ACFD7DA1503527400FF5F0F /* TBXML.h */,
+				3ACFD7DB1503527400FF5F0F /* TBXML.m */,
 			);
 			path = TBXML;
 			sourceTree = "<group>";
@@ -770,12 +764,11 @@
 				3A3EB3AC13810A1400FD02C4 /* Reachability.h in Headers */,
 				3A2BC92613855EE100B87225 /* SoundEffect.h in Headers */,
 				3A3EB3AF13810A1400FD02C4 /* SynthesizeSingleton.h in Headers */,
-				3A3EB3B013810A1400FD02C4 /* NSDataAdditions.h in Headers */,
 				3AAB418F13866BEB00368CB4 /* AKOFullScreenVideoController.h in Headers */,
 				3AAB419213866BF600368CB4 /* AKOLibrary_Video.h in Headers */,
-				3A3EB3B313810A1400FD02C4 /* TBXML.h in Headers */,
 				3A75FD971387C0D70048B8AF /* MKMapView+AKOLibrary.h in Headers */,
 				3A75FD9A1387C0E50048B8AF /* AKOLibrary_MapKit.h in Headers */,
+				3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,8 +962,6 @@
 				3A3EB3A613810A1400FD02C4 /* ASINetworkQueue.m in Sources */,
 				3A3EB3AA13810A1400FD02C4 /* JSONKit.m in Sources */,
 				3A3EB3AD13810A1400FD02C4 /* Reachability.m in Sources */,
-				3A3EB3B113810A1400FD02C4 /* NSDataAdditions.m in Sources */,
-				3A3EB3B413810A1400FD02C4 /* TBXML.m in Sources */,
 				3A94AA541381AA000079E5A4 /* AKOLineView.m in Sources */,
 				3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */,
 				3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */,
@@ -978,6 +969,7 @@
 				3A2BC92713855EE100B87225 /* SoundEffect.m in Sources */,
 				3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */,
 				3A75FD981387C0D70048B8AF /* MKMapView+AKOLibrary.m in Sources */,
+				3ACFD7DD1503527400FF5F0F /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

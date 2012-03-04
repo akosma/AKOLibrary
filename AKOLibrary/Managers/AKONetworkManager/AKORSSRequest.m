@@ -37,7 +37,7 @@ static NSString *AKORSSRequestTagChannel = @"channel";
 - (id)processResponse
 {
     NSData *data = [self responseData];
-    TBXML *tbxml = [TBXML tbxmlWithXMLData:data];
+    TBXML *tbxml = [TBXML tbxmlWithXMLData:data error:nil];
     TBXMLElement *root = tbxml.rootXMLElement;
     NSMutableArray *newsItems = [NSMutableArray array];
     if (root) 
