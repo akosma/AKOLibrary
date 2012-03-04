@@ -21,10 +21,22 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UITableViewController+AKOLibrary.h
+ Includes extensions to the UITableViewController class.
+ */
+
+
 #import <UIKit/UIKit.h>
 
+/**
+ Extensions to the UITableViewController class.
+ */
 @interface UITableViewController (AKOLibrary)
 
+/**
+ Deselects the currently selected row.
+ */
 - (void)ako_deselectCurrentlySelectedRow;
 
 @end

@@ -21,14 +21,26 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIImage+AKOLibrary.h
+ Includes extensions to the UIImage class.
+ */
+
 #import <UIKit/UIKit.h>
 
+/**
+ Extensions to the UIImage class.
+ */
 @interface UIImage (AKOLibrary)
 
-+ (UIImage *)ako_imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
-
+/**
+ Returns an image identical to the current one, with rounded corners.
+ */
 - (UIImage *)ako_imageWithRoundCorners;
 
+/**
+ Returns an image identical to the current one, with a different size.
+ */
 - (UIImage *)ako_scaleImageToSize:(CGSize)newSize;
 
 @end

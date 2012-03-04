@@ -21,16 +21,45 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIView+AKOLibrary.h
+ Includes extensions to the UIView class.
+ */
+
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
 
+/**
+ Extensions to the UIView class.
+ */
 @interface UIView (AKOLibrary)
 
+/**
+ Adds a drop shadow to the current view.
+ */
 - (void)ako_addDropShadow;
+
+/**
+ Adds a drop shadow to the current view using a slighly faster method.
+ */
 - (void)ako_addDropShadowHighPerformance;
+
+/**
+ Removes the drop shadow from the current view.
+ */
 - (void)ako_removeDropShadow;
+
+/**
+ Takes a snapshot image of the current view.
+ */
 - (UIImage *)ako_snapshot;
+
+/**
+ Saves a snapshot image of the current view as a PDF file.
+ @param path The path to the PDF file that will contain a snapshot 
+ of the current view.
+ */
 - (void)ako_saveToPDF:(NSString *)path;
 
 @end

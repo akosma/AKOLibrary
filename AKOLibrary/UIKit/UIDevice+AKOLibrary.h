@@ -21,11 +21,28 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIDevice+AKOLibrary.h
+ Includes extensions to the UIDevice class.
+ */
+
 #import <UIKit/UIKit.h>
 
+/**
+ Extensions to the UIDevice class.
+ */
 @interface UIDevice (AKOLibrary)
 
+/**
+ Returns a hardware-specific string uniquely identifying the kind of device.
+ */
 - (NSString *)ako_platform;
+
+/**
+ Returns a hardware-specific string uniquely identifying the kind of device.
+ This method returns a more human-readable description of the current device,
+ to be used for troubleshooting or reporting purposes.
+ */
 - (NSString *)ako_platformString;
 
 @end

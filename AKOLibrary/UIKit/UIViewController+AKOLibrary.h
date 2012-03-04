@@ -21,13 +21,29 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIViewController+AKOLibrary.h
+ Includes extensions to the UIViewController class.
+ */
+
 #import <UIKit/UIKit.h>
 
 
+/**
+ Extensions to the UIViewController class.
+ */
 @interface UIViewController (AKOLibrary)
 
+/**
+ Returns an autoreleased instance of the current controller.
+ This method wraps a call to "alloc / init / autorelease".
+ */
 + (id)ako_controller;
 
+/**
+ Returns a navigation controller that wraps the current controller.
+ @return A UINavigationController instance.
+ */
 + (UINavigationController *)ako_navigationController;
 
 @end

@@ -48,21 +48,16 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 
 @implementation UIImage (AKOLibrary)
 
-+ (UIImage *)ako_imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
+- (UIImage *)ako_scaleImageToSize:(CGSize)newSize
 {
     // This code comes from
     // http://ofcodeandmen.poltras.com/2008/10/30/undocumented-uiimage-resizing/
-
+    
     UIGraphicsBeginImageContext(newSize);
-    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
-}
-
-- (UIImage *)ako_scaleImageToSize:(CGSize)newSize
-{
-    return [UIImage ako_imageWithImage:self scaledToSize:newSize];
 }
 
 - (UIImage *)ako_imageWithRoundCorners

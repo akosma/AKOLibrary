@@ -21,35 +21,83 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UIColor+AKOLibrary.h
+ Includes extensions to the UIColor class.
+ */
+
 #import <UIKit/UIKit.h>
 
 
+/**
+ @file UIColor+AKOLibrary.h
+ Extensions to the UIColor class.
+ */
 @interface UIColor(AKOLibrary)
 
+/**
+ Returns a random color.
+ */
 + (UIColor *)ako_randomColor;
 
+/**
+ Returns indigo.
+ */
 + (UIColor *)ako_indigoColor;
 
+/**
+ Returns teal.
+ */
 + (UIColor *)ako_tealColor;
 
+/**
+ Returns violet.
+ */
 + (UIColor *)ako_violetColor;
 
+/**
+ Returns electric violet.
+ */
 + (UIColor *)ako_electricVioletColor;
 
+/**
+ Returns "vivid violet".
+ */
 + (UIColor *)ako_vividVioletColor;
 
+/**
+ Returns dark violet.
+ */
 + (UIColor *)ako_darkVioletColor;
 
+/**
+ Returns amber.
+ */
 + (UIColor *)ako_amberColor;
 
+/**
+ Returns dark amber.
+ */
 + (UIColor *)ako_darkAmberColor;
 
+/**
+ Returns lemon.
+ */
 + (UIColor *)ako_lemonColor;
 
+/**
+ Returns rose.
+ */
 + (UIColor *)ako_roseColor;
 
+/**
+ Returns ruby.
+ */
 + (UIColor *)ako_rubyColor;
 
+/**
+ Returns "fire engine red".
+ */
 + (UIColor *)ako_fireEngineRed;
 
 @end

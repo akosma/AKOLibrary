@@ -21,11 +21,23 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file UILabel+AKOLibrary.h
+ Includes extensions to the UILabel class.
+ */
+
+
 #import <UIKit/UIKit.h>
 
 
+/**
+ Extensions to the UILabel class.
+ */
 @interface UILabel (AKOLibrary)
 
+/**
+ Resizes the height of the current label to fit the height of its text.
+ */
 - (void)ako_resizeToFit;
 
 @end
