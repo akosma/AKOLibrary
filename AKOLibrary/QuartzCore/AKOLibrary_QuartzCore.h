@@ -21,5 +21,10 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_UIKit.h
+ Includes extensions and functions for the Core Animation and Quartz Core frameworks.
+ */
+
 #import "CAGradientLayer+AKOLibrary.h"
 #import "CAAnimation+AKOLibrary.h"

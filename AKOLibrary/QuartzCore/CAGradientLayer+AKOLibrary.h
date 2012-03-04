@@ -21,11 +21,27 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file CAGradientLayer+AKOLibrary.h
+ Includes extensions for the CAGradientLayer class.
+ */
+
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+/**
+ Extensions for the CAGradientLayer class.
+ */
 @interface CAGradientLayer (AKOLibrary)
 
+/**
+ Returns a gradient layer with the specified start and end colors.
+ Remember to set a frame to the return object of this method! Otherwise you will
+ not see the gradient layer when added to a view.
+ @param startColor The start color of the gradient.
+ @param endColor The final color for the gradient.
+ @return An instance of CAGradientLayer.
+ */
 + (CAGradientLayer *)ako_layerWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor;
 
 @end

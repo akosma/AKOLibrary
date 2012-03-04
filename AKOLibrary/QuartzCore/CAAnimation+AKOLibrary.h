@@ -21,13 +21,36 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file CAAnimation+AKOLibrary.h
+ Includes extensions for the CAAnimation class.
+ */
+
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
 
+/**
+ Extensions for the CAAnimation class.
+ */
 @interface CAAnimation (AKOLibrary)
 
+/**
+ Creates a pulsating animation with a specified duration.
+ A pulsating animation creates the effect of a pulsating object, which 
+ grows and shrinks continuously. This animation repeats forever.
+ @param duration The time in seconds for the whole animation.
+ @return An instance of CAAnimation.
+ */
 + (CAAnimation *)ako_pulsatingAnimationWithDuration:(CFTimeInterval)duration;
+
+/**
+ Creates an animation that changes opacity and size of a view.
+ This animation does not repeat forever, and when it's finished, it's
+ automatically removed from the view where it has been applied.
+ @param duration The time in seconds for the whole animation.
+ @return An instance of CAAnimation.
+ */
 + (CAAnimation *)ako_opacityAndTranformAnimationWithDuration:(CFTimeInterval)duration;
 
 @end
