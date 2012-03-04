@@ -108,9 +108,7 @@
 		3A709CF413811D5700F091F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B713810A7F00FD02C4 /* CoreData.framework */; };
 		3A709CF513811D5B00F091F5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B813810A7F00FD02C4 /* CoreText.framework */; };
 		3A709CF613811D6000F091F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A91D83D13808FC4006BBC46 /* Foundation.framework */; };
-		3A709CF713811D6300F091F5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BB13810A7F00FD02C4 /* MobileCoreServices.framework */; };
 		3A709CF813811D6500F091F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */; };
-		3A709CF913811D6700F091F5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BD13810A7F00FD02C4 /* Security.framework */; };
 		3A709CFA13811D6900F091F5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */; };
 		3A709CFB13811EB000F091F5 /* NSFetchRequest+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2BC138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m */; };
 		3A709CFE1381211200F091F5 /* AKOFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A709CFD1381211200F091F5 /* AKOFoundationTests.m */; };
@@ -132,6 +130,10 @@
 		3A94AA561381AA000079E5A4 /* AKOArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA501381AA000079E5A4 /* AKOArrowView.m */; };
 		3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA511381AA000079E5A4 /* AKOCircleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA521381AA000079E5A4 /* AKOCircleView.m */; };
+		3AA49431150392D600D4A67A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
+		3AA494371503935E00D4A67A /* LoggerClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494341503935E00D4A67A /* LoggerClient.h */; };
+		3AA494381503935E00D4A67A /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA494351503935E00D4A67A /* LoggerClient.m */; };
+		3AA494391503935E00D4A67A /* LoggerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494361503935E00D4A67A /* LoggerCommon.h */; };
 		3AAB417013866A8E00368CB4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAB416F13866A8E00368CB4 /* MediaPlayer.framework */; };
 		3AAB418F13866BEB00368CB4 /* AKOFullScreenVideoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB418D13866BEB00368CB4 /* AKOFullScreenVideoController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB418E13866BEB00368CB4 /* AKOFullScreenVideoController.m */; };
@@ -253,9 +255,7 @@
 		3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3EB3B713810A7F00FD02C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3A3EB3B813810A7F00FD02C4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		3A3EB3BB13810A7F00FD02C4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3A3EB3BD13810A7F00FD02C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AKOLibrary.h"; sourceTree = "<group>"; };
 		3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AKOLibrary.m"; sourceTree = "<group>"; };
@@ -279,7 +279,9 @@
 		3A94AA501381AA000079E5A4 /* AKOArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOArrowView.m; sourceTree = "<group>"; };
 		3A94AA511381AA000079E5A4 /* AKOCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCircleView.h; sourceTree = "<group>"; };
 		3A94AA521381AA000079E5A4 /* AKOCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCircleView.m; sourceTree = "<group>"; };
-		3A9BF48C14B2F39A0098F209 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3AA494341503935E00D4A67A /* LoggerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerClient.h; sourceTree = "<group>"; };
+		3AA494351503935E00D4A67A /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerClient.m; sourceTree = "<group>"; };
+		3AA494361503935E00D4A67A /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerCommon.h; sourceTree = "<group>"; };
 		3AAB416F13866A8E00368CB4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3AAB418D13866BEB00368CB4 /* AKOFullScreenVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOFullScreenVideoController.h; sourceTree = "<group>"; };
 		3AAB418E13866BEB00368CB4 /* AKOFullScreenVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOFullScreenVideoController.m; sourceTree = "<group>"; };
@@ -331,9 +333,7 @@
 				3A709CF313811D5400F091F5 /* CFNetwork.framework in Frameworks */,
 				3A709CF413811D5700F091F5 /* CoreData.framework in Frameworks */,
 				3A709CF513811D5B00F091F5 /* CoreText.framework in Frameworks */,
-				3A709CF713811D6300F091F5 /* MobileCoreServices.framework in Frameworks */,
 				3A709CF813811D6500F091F5 /* QuartzCore.framework in Frameworks */,
-				3A709CF913811D6700F091F5 /* Security.framework in Frameworks */,
 				3A709CFA13811D6900F091F5 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA49431150392D600D4A67A /* CFNetwork.framework in Frameworks */,
 				3A75FD9C1387C1DC0048B8AF /* MapKit.framework in Frameworks */,
 				3AAB417013866A8E00368CB4 /* MediaPlayer.framework in Frameworks */,
 				3A2BC92A13855EF200B87225 /* AudioToolbox.framework in Frameworks */,
@@ -539,6 +540,7 @@
 		3A3EB36A13810A1400FD02C4 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AA494331503935E00D4A67A /* NSLogger */,
 				3ACFD8201503583E00FF5F0F /* Reachability */,
 				3ACFD7F1150356DF00FF5F0F /* AFNetworking */,
 				3ACFD7DE1503539900FF5F0F /* NextiveJson */,
@@ -627,7 +629,6 @@
 		3A91D83A13808FC4006BBC46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A9BF48C14B2F39A0098F209 /* libz.dylib */,
 				3A75FD9B1387C1DC0048B8AF /* MapKit.framework */,
 				3AAB416F13866A8E00368CB4 /* MediaPlayer.framework */,
 				3A2BC92913855EF200B87225 /* AudioToolbox.framework */,
@@ -636,13 +637,21 @@
 				3A1FF2EA138118CC00A94C87 /* CoreGraphics.framework */,
 				3A3EB3B813810A7F00FD02C4 /* CoreText.framework */,
 				3A91D83D13808FC4006BBC46 /* Foundation.framework */,
-				3A3EB3BB13810A7F00FD02C4 /* MobileCoreServices.framework */,
 				3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */,
-				3A3EB3BD13810A7F00FD02C4 /* Security.framework */,
 				3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */,
 				3A1FF2EB138118CC00A94C87 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AA494331503935E00D4A67A /* NSLogger */ = {
+			isa = PBXGroup;
+			children = (
+				3AA494341503935E00D4A67A /* LoggerClient.h */,
+				3AA494351503935E00D4A67A /* LoggerClient.m */,
+				3AA494361503935E00D4A67A /* LoggerCommon.h */,
+			);
+			path = NSLogger;
 			sourceTree = "<group>";
 		};
 		3AAB418C13866BEB00368CB4 /* Video */ = {
@@ -781,6 +790,8 @@
 				3ACFD818150356DF00FF5F0F /* AFXMLRequestOperation.h in Headers */,
 				3ACFD81A150356DF00FF5F0F /* UIImageView+AFNetworking.h in Headers */,
 				3ACFD8231503583E00FF5F0F /* Reachability.h in Headers */,
+				3AA494371503935E00D4A67A /* LoggerClient.h in Headers */,
+				3AA494391503935E00D4A67A /* LoggerCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +997,7 @@
 				3ACFD819150356DF00FF5F0F /* AFXMLRequestOperation.m in Sources */,
 				3ACFD81B150356DF00FF5F0F /* UIImageView+AFNetworking.m in Sources */,
 				3ACFD8241503583E00FF5F0F /* Reachability.m in Sources */,
+				3AA494381503935E00D4A67A /* LoggerClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

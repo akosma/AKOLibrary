@@ -98,9 +98,9 @@ To use the library in a project, follow these steps:
 - Select the project icon, select the main target and select the "Build
   Phases" tab. Add the following frameworks in your project: MapKit,
   MediaPlayer, AudioToolbox, CoreData, CoreGraphics, CoreText,
-  Foundation, QuartzCore, SystemConfiguration, UIKit. In the "Build
-  Settings" tab, select the "Other Linker Flags" entry and add the
-  `"-all_load"` flag.
+  Foundation, QuartzCore, SystemConfiguration, UIKit, CFNetwork. 
+- In the "Build Settings" tab, select the "Other Linker Flags" entry and 
+  add the `"-all_load"` flag.
 - In your source files, use the `#import <AKOLibrary/AKOLibrary.h>`
   header.
 
