@@ -23,6 +23,12 @@
 
 #import "AKOCircleView.h"
 
+@interface AKOCircleView ()
+
+- (void)setup;
+
+@end
+
 
 @implementation AKOCircleView
 

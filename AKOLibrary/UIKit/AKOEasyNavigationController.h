@@ -21,18 +21,25 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOEasyNavigationController.h
+ Includes the definition of the AKOEasyNavigationController class.
+ */
+
 #import <UIKit/UIKit.h>
 #import "AKOEasyTableViewControllerDelegate.h"
 
+/**
+ This class provides a simple method to prototype applications.
+ You can create an instance of this navigation controller, and provide the
+ path to a sequence file name, which will be used to load instances of
+ AKOEasyTableViewController and display dummy data inside of it.
+ */
 @interface AKOEasyNavigationController : UINavigationController <AKOEasyTableViewControllerDelegate>
-{
-@private
-    NSString *_dataSequenceFileName;
-}
 
-@property (nonatomic, retain) NSArray *dataSequence;
+/**
+ The filename of a plist file included in the bundle of the current application.
+ */
 @property (nonatomic, copy) NSString *dataSequenceFileName;
-
-- (void)loadNextScreen;
 
 @end

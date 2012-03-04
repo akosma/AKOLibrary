@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOCircleView.h
+ Includes the definition of the AKOCircleView class.
+ */
+
 #import <UIKit/UIKit.h>
 
 
@@ -29,13 +34,29 @@ typedef enum {
     AKOCircleViewStyleFilled = 1
 } AKOCircleViewStyle;
 
+/**
+ Draws a circle on the screen.
+ */
 @interface AKOCircleView : UIView 
 
+/**
+ Width of the stroke of the circle.
+ */
 @property (nonatomic) CGFloat strokeWidth;
-@property (nonatomic) AKOCircleViewStyle style;
-@property (nonatomic, retain) UIColor *fillColor;
-@property (nonatomic, retain) UIColor *strokeColor;
 
-- (void)setup;
+/**
+ Style of the circle.
+ */
+@property (nonatomic) AKOCircleViewStyle style;
+
+/**
+ Fill color of the circle.
+ */
+@property (nonatomic, retain) UIColor *fillColor;
+
+/**
+ Stroke color of the circle.
+ */
+@property (nonatomic, retain) UIColor *strokeColor;
 
 @end

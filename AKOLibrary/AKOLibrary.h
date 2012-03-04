@@ -41,7 +41,7 @@
  @mainpage AKOLibrary
 
  @author Adrian Kosmaczewski
- @date May 16th, 2011
+ @date March 4th, 2011
 
  This library exposes functionality and classes used in many applications
  Developed by akosma software.
@@ -70,6 +70,9 @@
  
  @section sec_2 Install Doxygen
  
+ Install Doxygen http://doxygen.org/ using
+ Homebrew http://mxcl.github.com/homebrew/ with the command `brew install doxygen`
+
  Download Doxygen from the website http://doxygen.org/ and install it in 
  the "Applications" folder.
  
@@ -146,10 +149,10 @@
  
  @li Import the AKOLibrary.framework bundle in your app. Choose to explicitly
  copy it into the project.
- @li Select the project icon, select the main target and select the "Build Phases"
- tab. Add the following frameworks in your project: libz.1.2.3.dylib, MapKit, 
- MediaPlayer, AudioToolbox, CFNetwork, CoreData, CoreGraphics, CoreText, Foundation,
- MobileCoreServices, QuartzCore, Security, SystemConfiguration, UIKit.
+ @li Select the project icon, select the main target and select the "Build
+ Phases" tab. Add the following frameworks in your project: MapKit,
+ MediaPlayer, AudioToolbox, CoreData, CoreGraphics, CoreText,
+ Foundation, QuartzCore, SystemConfiguration, UIKit, CFNetwork. 
  @in In the "Build Settings" tab, select the "Other Linker Flags" entry and
  add the "-all_load" flag.
  @li In your source files, use the #import <AKOLibrary/AKOLibrary.h> header.

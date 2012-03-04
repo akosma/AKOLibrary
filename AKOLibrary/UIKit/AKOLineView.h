@@ -21,22 +21,45 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
+/**
+ @file AKOLineView.h
+ Includes the definition of the AKOLineView class.
+ */
 
+#import <UIKit/UIKit.h>
 
 typedef enum {
     AKOLineViewModeStroke = 0,
     AKOLineViewModeFill = 1
 } AKOLineViewMode;
 
-
+/**
+ Subclass of UIView that draws a line going through all the points specified 
+ in the "points" array. Users can specify the line color, the width and the 
+ line mode.
+ */
 @interface AKOLineView : UIView 
 
+/**
+ The points through which the line goes through. This array contains CGPoints
+ wrapped as NSValues.
+ */
 @property (nonatomic, copy) NSArray *points;
-@property (nonatomic, retain) UIColor *color;
-@property (nonatomic) CGFloat width;
-@property (nonatomic) AKOLineViewMode mode;
 
-- (void)setup;
+/**
+ The color of the line.
+ */
+@property (nonatomic, retain) UIColor *color;
+
+/**
+ The width of the line.
+ */
+@property (nonatomic) CGFloat width;
+
+/**
+ The mode of the line. When set to "AKOLineViewModeFill", the line will
+ be filled as a polygon.
+ */
+@property (nonatomic) AKOLineViewMode mode;
 
 @end

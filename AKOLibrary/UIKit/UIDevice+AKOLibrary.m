@@ -25,6 +25,9 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
+// This code was adapted from
+// http://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
+
 @implementation UIDevice (AKOLibrary)
 
 - (NSString *)ako_platform
@@ -45,7 +48,10 @@
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
     if ([platform isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
     if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone3,2"])    return @"Verizon iPhone 4";
+    if ([platform isEqualToString:@"iPhone3,2"])    return @"iPhone 4 (other carrier)";
+    if ([platform isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (Verizon)";
+    if ([platform isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
+    if ([platform isEqualToString:@"iPhone4,2"])    return @"iPhone 4S (Verizon)";
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
     if ([platform isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
@@ -55,6 +61,7 @@
     if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
     if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
     if ([platform isEqualToString:@"i386"])         return @"Simulator";
+    if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
     return platform;
 }
 

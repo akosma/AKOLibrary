@@ -21,6 +21,11 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_UIKit.h
+ Includes extensions and functions for the UIKit framework.
+ */
+
 #import "AKOLibrary_UIKit_functions.h"
 #import "UIView+AKOLibrary.h"
 #import "UILabel+AKOLibrary.h"

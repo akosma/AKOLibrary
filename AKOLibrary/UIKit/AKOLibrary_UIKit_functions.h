@@ -21,7 +21,23 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOLibrary_UIKit_Functions.h
+ Provides simple functions simplifying some tasks in UIKit.
+ */
+
 #import <UIKit/UIKit.h>
 
+/**
+ Backwards-compatible (from iPhone OS 3.x onwards) function that returns a 
+ boolean specifying whether the current device has printing configured or not.
+ @return A boolean value; YES is printing is enabled, NO otherwise.
+ */
 BOOL AKOCanPrint();
+
+/**
+ Backwards-compatible (from iPhone OS 3.x onwards) function that returns a 
+ boolean specifying whether advertising is possible in the current device.
+ @return A boolean value; YES is advertising is enabled, NO otherwise.
+ */
 BOOL AKOCanShowAdvertising();

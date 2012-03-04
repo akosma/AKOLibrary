@@ -23,9 +23,6 @@
 
 #import <UIKit/UIKit.h>
 
-// This category was adapted from
-// http://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
-
 @interface UIDevice (AKOLibrary)
 
 - (NSString *)ako_platform;

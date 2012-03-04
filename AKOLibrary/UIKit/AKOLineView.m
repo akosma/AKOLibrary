@@ -23,6 +23,12 @@
 
 #import "AKOLineView.h"
 
+@interface AKOLineView ()
+
+- (void)setup;
+
+@end
+
 
 @implementation AKOLineView
 
@@ -70,9 +76,7 @@
 - (void)dealloc
 {
     [_points release];
-    _points = nil;
     [_color release];
-    _color = nil;
     
     [super dealloc];
 }

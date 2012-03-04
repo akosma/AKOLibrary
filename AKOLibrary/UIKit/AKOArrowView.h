@@ -21,9 +21,18 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOArrowView.h
+ Includes the definition of the AKOArrowView class.
+ */
+
 #import "AKOLineView.h"
 
-
+/**
+ Subclass of AKOLineView that draws an arrow. 
+ This class is meant to be used as is, without having to modify its
+ internal structure.
+ */
 @interface AKOArrowView : AKOLineView
 
 @end

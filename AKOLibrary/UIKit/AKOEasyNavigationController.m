@@ -24,10 +24,20 @@
 #import "AKOEasyNavigationController.h"
 #import "AKOEasyTableViewController.h"
 
+
+@interface AKOEasyNavigationController ()
+
+@property (nonatomic, retain) NSArray *dataSequence;
+
+- (void)loadNextScreen;
+
+@end
+
+
 @implementation AKOEasyNavigationController
 
 @synthesize dataSequence = _dataSequence;
-@dynamic dataSequenceFileName;
+@synthesize dataSequenceFileName = _dataSequenceFileName;
 
 #pragma mark -
 #pragma mark Init and dealloc
