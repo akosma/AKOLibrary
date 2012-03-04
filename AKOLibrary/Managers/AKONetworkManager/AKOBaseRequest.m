@@ -42,7 +42,9 @@ static NSString *AKOBaseRequestHeaderDeviceKindKey = @"AKOBaseRequestHeaderDevic
 
 - (id)initWithURL:(NSURL *)newURL
 {
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:newURL];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:newURL
+                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                timeoutInterval:AKOBaseRequestTimeout];
     self = [super initWithRequest:request];
     if (self)
     {

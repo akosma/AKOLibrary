@@ -148,6 +148,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
     [self.notificationCenter postNotification:notif];    
 }
 
+- (void)clearCache
+{
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+}
+
 #pragma mark - Request callback methods
 
 - (void)requestSuccess:(AKOBaseRequest *)request response:(id)responseObject

@@ -41,5 +41,6 @@ typedef enum {
 - (void)sendRequest:(AKOBaseRequest *)request;
 - (void)notifyError:(NSError *)error forURL:(NSURL *)url;
 - (NSString *)baseHostname;
+- (void)clearCache;
 
 @end
