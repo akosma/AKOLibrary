@@ -49,6 +49,8 @@ static NSString *AKORSSRequestTagChannel = @"channel";
             TBXMLElement *newsTag = [TBXML childElementNamed:AKORSSRequestTagName 
                                                parentElement:channelTag];
             
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
             while (newsTag != nil)
             {
                 TBXMLElement *dateTag = [TBXML childElementNamed:AKORSSRequestTagDate 
@@ -65,8 +67,6 @@ static NSString *AKORSSRequestTagChannel = @"channel";
                 NSString *descriptionText = [TBXML textForElement:descriptionTag];
                 NSString *linkText = [TBXML textForElement:linkTag];
                 
-                NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
-                [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
                 NSDate *date = [formatter dateFromString:dateText];
                 
                 NSMutableDictionary *item = [NSMutableDictionary dictionary];
@@ -83,6 +83,7 @@ static NSString *AKORSSRequestTagChannel = @"channel";
                 newsTag = [TBXML nextSiblingNamed:AKORSSRequestTagName 
                                 searchFromElement:newsTag];
             }
+            [formatter release];
         }
     }
     return newsItems;

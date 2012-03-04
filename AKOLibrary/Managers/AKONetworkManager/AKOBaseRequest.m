@@ -42,25 +42,19 @@ static NSString *AKOBaseRequestHeaderDeviceKindKey = @"AKOBaseRequestHeaderDevic
 
 - (id)initWithURL:(NSURL *)newURL
 {
-    self = [super initWithURL:newURL];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:newURL];
+    self = [super initWithRequest:request];
     if (self)
     {
-        self.shouldRedirect = NO;
-        self.defaultResponseEncoding = NSUTF8StringEncoding;
-        self.timeOutSeconds = AKOBaseRequestTimeout;
-
         // Set some request headers for having information about
         // the current client, software versions and device kind
         NSString *appVersion = AKOCurrentVersionNumber();
         NSString *systemVersion = [UIDevice currentDevice].systemVersion;
         NSString *hardware = [[UIDevice currentDevice] ako_platformString];
         
-        [self addRequestHeader:AKOBaseRequestHeaderApplicationVersionKey 
-                         value:appVersion];
-        [self addRequestHeader:AKOBaseRequestHeaderOSVersionKey
-                         value:systemVersion];
-        [self addRequestHeader:AKOBaseRequestHeaderDeviceKindKey
-                         value:hardware];
+        [request setValue:appVersion forHTTPHeaderField:AKOBaseRequestHeaderApplicationVersionKey];
+        [request setValue:systemVersion forHTTPHeaderField:AKOBaseRequestHeaderOSVersionKey];
+        [request setValue:hardware forHTTPHeaderField:AKOBaseRequestHeaderDeviceKindKey];
     }
     return self;
 }
@@ -84,7 +78,7 @@ static NSString *AKOBaseRequestHeaderDeviceKindKey = @"AKOBaseRequestHeaderDevic
 
 - (NSString *)responseDescription
 {
-    NSMutableString *result = [NSMutableString stringWithFormat:@"RESPONSE CODE %d:\n", [self responseStatusCode]];
+    NSMutableString *result = [NSMutableString stringWithFormat:@"RESPONSE CODE %d:\n", [self.response statusCode]];
     [result appendString:[self basicDescription]];
     
     NSString *response = [self responseString];
@@ -119,7 +113,7 @@ static NSString *AKOBaseRequestHeaderDeviceKindKey = @"AKOBaseRequestHeaderDevic
 
 - (NSString *)basicDescription
 {
-    return [NSString stringWithFormat:@"%@ (%@)\n", NSStringFromClass([self class]), [self.url absoluteString]];
+    return [NSString stringWithFormat:@"%@ (%@)\n", NSStringFromClass([self class]), [[self.request URL] absoluteString]];
 }
 
 @end

@@ -24,9 +24,21 @@
 #import "AKONetworkManager.h"
 #import "AKOLibrary_Managers_notifications.h"
 #import "SynthesizeSingleton.h"
-#import "ASINetworkQueue.h"
 #import "AKOBaseRequest.h"
 #import "Reachability.h"
+
+@interface AKONetworkManager ()
+
+@property (nonatomic, strong) id reachabilityObserver;
+@property (nonatomic, strong) NSOperationQueue *networkQueue;
+@property (nonatomic, retain) Reachability *reachability;
+@property (nonatomic, assign) NSNotificationCenter *notificationCenter;
+
+- (void)requestSuccess:(AKOBaseRequest *)request response:(id)responseObject;
+- (void)requestFailure:(AKOBaseRequest *)request error:(NSError *)error;
+
+@end
+
 
 @implementation AKONetworkManager
 
@@ -36,7 +48,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
 @synthesize notificationCenter = _notificationCenter;
 @synthesize reachability = _reachability;
 @synthesize connectivity = _connectivity;
-@synthesize connectionAvailable = _connectionAvailable;
+@synthesize reachabilityObserver = _reachabilityObserver;
 
 - (id)init
 {
@@ -44,40 +56,55 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
     if (self)
     {
         _notificationCenter = [NSNotificationCenter defaultCenter];
+        _networkQueue = [[NSOperationQueue alloc] init];
         
         NSString *hostname = [self baseHostname];
         NSAssert(hostname, @"You have to implement baseHostname in your subclass!");
         _reachability = [[Reachability reachabilityWithHostName:hostname] retain];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(reachabilityChanged:) 
-                                                     name:kReachabilityChangedNotification 
-                                                   object:_reachability];
+        
+        void(^block)(NSNotification *) = ^(NSNotification *notification){
+            self.connectivity = (AKONetworkManagerConnectivity)[self.reachability currentReachabilityStatus];
+            
+            [self.notificationCenter postNotificationName:AKONetworkManagerConnectivityChangedNotification
+                                                   object:self];
+            
+            
+            switch (self.connectivity) 
+            {
+                case AKONetworkManagerConnectivityNone:
+                    [self.networkQueue cancelAllOperations];
+                    break;
+                    
+                case AKONetworkManagerConnectivityWifi:
+                    self.networkQueue.maxConcurrentOperationCount = 8;
+                    break;
+                    
+                case AKONetworkManagerConnectivityMobile:
+                    self.networkQueue.maxConcurrentOperationCount = 4;
+                    break;
+                    
+                default:
+                    break;
+            }
+        };
+        
+        _reachabilityObserver = [[_notificationCenter addObserverForName:kReachabilityChangedNotification 
+                                                                  object:_reachability 
+                                                                   queue:nil
+                                                              usingBlock:block] retain];
         
         _connectivity = (AKONetworkManagerConnectivity)[self.reachability currentReachabilityStatus];
-        _connectionAvailable = (self.connectivity != AKONetworkManagerConnectivityNone);
         [_reachability startNotifier];
-        
-        _networkQueue = [[ASINetworkQueue alloc] init];
-        _networkQueue.shouldCancelAllRequestsOnFailure = NO;
-        _networkQueue.delegate = self;
-        _networkQueue.requestDidFinishSelector = @selector(requestDone:);
-        _networkQueue.requestDidFailSelector = @selector(requestWentWrong:);
-        _networkQueue.queueDidFinishSelector = @selector(queueFinished:);
-        [_networkQueue go];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self 
-                                                    name:kReachabilityChangedNotification
-                                                  object:_reachability];
-    [_networkQueue release];
-    _networkQueue = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:_reachabilityObserver];
     [_reachability release];
-    _reachability = nil;
-    
+    [_networkQueue release];
+    [_reachabilityObserver release];
     [super dealloc];
 }
 
@@ -88,23 +115,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
     return nil;
 }
 
-#pragma mark - NSNotification methods
-
-- (void)reachabilityChanged:(NSNotification *)notification
-{
-    self.connectivity = (AKONetworkManagerConnectivity)[self.reachability currentReachabilityStatus];
-    self.connectionAvailable = (self.connectivity != AKONetworkManagerConnectivityNone);
-    
-    [self.notificationCenter postNotificationName:AKONetworkManagerConnectivityChangedNotification
-                                           object:self];
-}
-
 #pragma mark - Public methods
 
 - (void)sendRequest:(AKOBaseRequest *)request
 {
-    if (self.isConnectionAvailable)
+    if (self.connectivity != AKONetworkManagerConnectivityNone)
     {
+        void(^success)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation* operation, id responseObject) {
+            [self requestSuccess:(AKOBaseRequest *)operation 
+                        response:responseObject];
+        };
+        
+        void(^error)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation* operation, NSError *error) {
+            [self requestFailure:(AKOBaseRequest *)operation 
+                           error:error];
+        };
+
+        [request setCompletionBlockWithSuccess:success
+                                       failure:error];
+
         [self.networkQueue addOperation:request];
     }
 }
@@ -119,12 +148,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
     [self.notificationCenter postNotification:notif];    
 }
 
-#pragma mark -
-#pragma mark ASINetworkQueue delegate methods
+#pragma mark - Request callback methods
 
-- (void)requestDone:(AKOBaseRequest *)request
+- (void)requestSuccess:(AKOBaseRequest *)request response:(id)responseObject
 {
-    NSInteger code = [request responseStatusCode];
+    NSInteger code = [request.response statusCode];
     
     if (code == 200)
     {
@@ -133,21 +161,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKONetworkManager)
     else if (code >= 500)
     {
         NSError *error = [NSError errorWithDomain:@"Server error" code:code userInfo:nil];
-        NSURL *url = request.url;
+        NSURL *url = [request.request URL];
         [self notifyError:error forURL:url];
     }
 }
 
-- (void)requestWentWrong:(AKOBaseRequest *)request
+- (void)requestFailure:(AKOBaseRequest *)request error:(NSError *)error
 {
-    NSError *error = [request error];
-    NSURL *url = request.url;
+    NSURL *url = [request.request URL];
     [self notifyError:error 
                forURL:url];
-}
-
-- (void)queueFinished:(ASINetworkQueue *)queue
-{
 }
 
 @end

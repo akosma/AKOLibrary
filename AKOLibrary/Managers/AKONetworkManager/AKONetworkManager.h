@@ -23,8 +23,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class ASINetworkQueue;
-@class Reachability;
 @class AKOBaseRequest;
 
 typedef enum {
@@ -33,13 +31,10 @@ typedef enum {
     AKONetworkManagerConnectivityMobile = 2
 } AKONetworkManagerConnectivity;
 
+
 @interface AKONetworkManager : NSObject 
 
-@property (nonatomic, retain) ASINetworkQueue *networkQueue;
-@property (nonatomic, assign) NSNotificationCenter *notificationCenter;
-@property (nonatomic, retain) Reachability *reachability;
 @property (nonatomic) AKONetworkManagerConnectivity connectivity;
-@property (nonatomic, getter=isConnectionAvailable) BOOL connectionAvailable;
 
 + (AKONetworkManager *)sharedAKONetworkManager;
 
