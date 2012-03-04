@@ -38,7 +38,9 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(AKOFileSystemManager)
 
 @synthesize fileManager = _fileManager;
+@dynamic applicationCacheDirectory;
 @dynamic applicationDocumentsDirectory;
+@dynamic applicationTempDirectory;
 
 - (id)init
 {
@@ -57,20 +59,42 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKOFileSystemManager)
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark Private methods
+#pragma mark - Public properties
 
 - (NSString *)applicationDocumentsDirectory
 {
-    static NSString *path;
-    if (path == nil)
+    static NSString *documentsPath;
+    if (documentsPath == nil)
     {
         NSArray *array = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
                                                              NSUserDomainMask, 
                                                              YES);
-        path = [array lastObject];
+        documentsPath = [array lastObject];
     }
-    return path;
+    return documentsPath;
+}
+
+- (NSString *)applicationCacheDirectory
+{
+    static NSString *cachePath;
+    if (cachePath == nil)
+    {
+        NSArray *array = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, 
+                                                             NSUserDomainMask, 
+                                                             YES);
+        cachePath = [array lastObject];
+    }
+    return cachePath;
+}
+
+- (NSString *)applicationTempDirectory
+{
+    static NSString *tempPath;
+    if (tempPath == nil)
+    {
+        tempPath = NSTemporaryDirectory();
+    }
+    return tempPath;
 }
 
 @end
