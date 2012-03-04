@@ -27,5 +27,4 @@
  */
 
 #import "UIFont+AKOLibrary.h"
-#import "AKOCustomFontLabel.h"
 #import "AKOMultiPageTextView.h"

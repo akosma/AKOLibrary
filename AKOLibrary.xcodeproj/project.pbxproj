@@ -33,8 +33,6 @@
 		3A3EB308138109E900FD02C4 /* AKOLibrary_CoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB309138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB30A138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2BC138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m */; };
-		3A3EB30C138109E900FD02C4 /* AKOCustomFontLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BE138109E900FD02C4 /* AKOCustomFontLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A3EB30D138109E900FD02C4 /* AKOCustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2BF138109E900FD02C4 /* AKOCustomFontLabel.m */; };
 		3A3EB30F138109E900FD02C4 /* AKOLibrary_CoreText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2C0138109E900FD02C4 /* AKOLibrary_CoreText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB310138109E900FD02C4 /* AKOMultiColumnTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2C1138109E900FD02C4 /* AKOMultiColumnTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB311138109E900FD02C4 /* AKOMultiColumnTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2C2138109E900FD02C4 /* AKOMultiColumnTextView.m */; };
@@ -188,8 +186,6 @@
 		3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_CoreData.h; sourceTree = "<group>"; };
 		3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+AKOLibrary.h"; sourceTree = "<group>"; };
 		3A3EB2BC138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+AKOLibrary.m"; sourceTree = "<group>"; };
-		3A3EB2BE138109E900FD02C4 /* AKOCustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCustomFontLabel.h; sourceTree = "<group>"; };
-		3A3EB2BF138109E900FD02C4 /* AKOCustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCustomFontLabel.m; sourceTree = "<group>"; };
 		3A3EB2C0138109E900FD02C4 /* AKOLibrary_CoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_CoreText.h; sourceTree = "<group>"; };
 		3A3EB2C1138109E900FD02C4 /* AKOMultiColumnTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOMultiColumnTextView.h; sourceTree = "<group>"; };
 		3A3EB2C2138109E900FD02C4 /* AKOMultiColumnTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOMultiColumnTextView.m; sourceTree = "<group>"; };
@@ -406,8 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				3A3EB2C0138109E900FD02C4 /* AKOLibrary_CoreText.h */,
-				3A3EB2BE138109E900FD02C4 /* AKOCustomFontLabel.h */,
-				3A3EB2BF138109E900FD02C4 /* AKOCustomFontLabel.m */,
 				3A3EB2C1138109E900FD02C4 /* AKOMultiColumnTextView.h */,
 				3A3EB2C2138109E900FD02C4 /* AKOMultiColumnTextView.m */,
 				3A3EB2C3138109E900FD02C4 /* AKOMultiPageTextView.h */,
@@ -724,7 +718,6 @@
 				3A3EB307138109E900FD02C4 /* AKOLibrary.h in Headers */,
 				3A3EB308138109E900FD02C4 /* AKOLibrary_CoreData.h in Headers */,
 				3A3EB309138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h in Headers */,
-				3A3EB30C138109E900FD02C4 /* AKOCustomFontLabel.h in Headers */,
 				3A3EB30F138109E900FD02C4 /* AKOLibrary_CoreText.h in Headers */,
 				3A3EB310138109E900FD02C4 /* AKOMultiColumnTextView.h in Headers */,
 				3A3EB313138109E900FD02C4 /* AKOMultiPageTextView.h in Headers */,
@@ -942,7 +935,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3EB30A138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m in Sources */,
-				3A3EB30D138109E900FD02C4 /* AKOCustomFontLabel.m in Sources */,
 				3A3EB311138109E900FD02C4 /* AKOMultiColumnTextView.m in Sources */,
 				3A3EB314138109E900FD02C4 /* AKOMultiPageTextView.m in Sources */,
 				3A3EB317138109E900FD02C4 /* UIFont+AKOLibrary.m in Sources */,
