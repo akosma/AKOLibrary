@@ -26,6 +26,8 @@
 @interface AKOFullScreenVideoController ()
 
 @property (nonatomic, retain) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, strong) id movieReadyObserver;
+@property (nonatomic, strong) id moviePlaybackFinishedObserver;
 
 @end
 
@@ -34,14 +36,19 @@
 
 @synthesize moviePlayer = _moviePlayer;
 @synthesize movieFileName = _movieFileName;
+@synthesize movieReadyObserver = _movieReadyObserver;
+@synthesize moviePlaybackFinishedObserver = _moviePlaybackFinishedObserver;
 
 - (void)dealloc
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self];
+    [center removeObserver:_movieReadyObserver];
+    [center removeObserver:_moviePlaybackFinishedObserver];
 
     [_moviePlayer release];
     [_movieFileName release];
+    [_movieReadyObserver release];
+    [_moviePlaybackFinishedObserver release];
     [super dealloc];
 }
 
@@ -63,16 +70,27 @@
         
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
         
-        [center addObserver:self 
-                   selector:@selector(movieReady:) 
-                       name:MPMoviePlayerLoadStateDidChangeNotification
-                     object:self.moviePlayer];
+        self.movieReadyObserver = [center addObserverForName:MPMoviePlayerLoadStateDidChangeNotification
+                                                      object:self.moviePlayer
+                                                       queue:nil 
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      if (self.moviePlayer.loadState == 3)
+                                                      {
+                                                          self.view.alpha = 1.0;
+                                                          [self.moviePlayer play];
+                                                      }
+                                                  }];
         
-        [center addObserver:self 
-                   selector:@selector(moviePlaybackFinished:) 
-                       name:MPMoviePlayerPlaybackDidFinishNotification
-                     object:self.moviePlayer];
-        
+        self.moviePlaybackFinishedObserver = [center addObserverForName:MPMoviePlayerPlaybackDidFinishNotification
+                                                                 object:self.moviePlayer 
+                                                                  queue:nil
+                                                             usingBlock:^(NSNotification *notification) {
+                                                                 [UIView animateWithDuration:0.4 
+                                                                                  animations:^{
+                                                                                      self.moviePlayer.view.alpha = 0.0;
+                                                                                  }];
+                                                             }];
+                
         self.moviePlayer.backgroundView.backgroundColor = [UIColor blackColor];
         self.moviePlayer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
@@ -91,25 +109,5 @@
 {
     return YES;
 }
-
-#pragma mark - NSNotification handlers
-
-- (void)movieReady:(NSNotification *)notification
-{
-    if (self.moviePlayer.loadState == 3)
-    {
-        self.view.alpha = 1.0;
-        [self.moviePlayer play];
-    }
-}
-
-- (void)moviePlaybackFinished:(NSNotification *)notification
-{
-    [UIView animateWithDuration:0.4 
-                     animations:^{
-                         self.moviePlayer.view.alpha = 0.0;
-                     }];
-}
-
 
 @end

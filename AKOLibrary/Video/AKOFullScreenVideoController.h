@@ -21,9 +21,20 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOFullScreenVideoController.h
+ Contains the definition of the AKOFullScreenVideoController class.
+ */
+
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
+/**
+ Ready-to use UIViewController subclass that encapsulates an instance of
+ MPMoviePlayerController. Users of this class should only instantiate and 
+ provide a valid path name through the movieFileName parameter, which is 
+ the filename of a movie contained in the current bundle of the application.
+ */
 @interface AKOFullScreenVideoController : UIViewController 
 
 @property (nonatomic, copy) NSString *movieFileName;
