@@ -22,9 +22,14 @@
 //
 
 #import "AKOEasyTableViewController.h"
+#import "UITableViewController+AKOLibrary.h"
 
 @interface AKOEasyTableViewController ()
+
+@property (nonatomic) BOOL hasSections;
+
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 
@@ -33,13 +38,12 @@
 @synthesize delegate = _delegate;
 @synthesize autoDeselect = _autoDeselect;
 @synthesize accessoryType = _accessoryType;
+@synthesize dataSource = _dataSource;
+@synthesize rowHeight = _rowHeight;
+@synthesize dataSourceFileName = _dataSourceFileName;
+@synthesize hasSections = _hasSections;
 
-@dynamic dataSource;
-@dynamic rowHeight;
-@dynamic dataSourceFileName;
-
-#pragma mark -
-#pragma mark Init and dealloc
+#pragma mark - Init and dealloc
 
 - (id)initWithStyle:(UITableViewStyle)style 
 {
@@ -59,11 +63,11 @@
 {
     _delegate = nil;
     [_dataSource release];
+    [_dataSourceFileName release];
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark Public properties
+#pragma mark - Public properties
 
 - (NSString *)dataSourceFileName
 {
@@ -112,69 +116,45 @@
     }
 }
 
-#pragma mark -
-#pragma mark Public methods
-
-- (void)deselectSelectedRow
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (void)viewDidLoad 
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+#pragma mark - Public methods
 
 - (void)didReceiveMemoryWarning 
 {
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark -
-#pragma mark Table view methods
+#pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    if (_hasSections)
+    if (self.hasSections)
     {
-        return [_dataSource count];
+        return [self.dataSource count];
     }
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-    if (_hasSections)
+    if (self.hasSections)
     {
-        NSDictionary *dict = [_dataSource objectAtIndex:section];
+        NSDictionary *dict = [self.dataSource objectAtIndex:section];
         NSArray *values = [dict objectForKey:@"values"];
         return [values count];
     }
-    return [_dataSource count];
+    return [self.dataSource count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return _rowHeight;
+    return self.rowHeight;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (_hasSections)
+    if (self.hasSections)
     {
-        NSDictionary *dict = [_dataSource objectAtIndex:section];
+        NSDictionary *dict = [self.dataSource objectAtIndex:section];
         return [dict objectForKey:@"title"];
     }
     return nil;
@@ -190,7 +170,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
                                        reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.accessoryType = _accessoryType;
+    cell.accessoryType = self.accessoryType;
     cell.textLabel.text = [obj description];
     return cell;
 }
@@ -199,9 +179,9 @@
 {
     id obj = [self objectAtIndexPath:indexPath];
     
-    if ([_delegate respondsToSelector:@selector(easyTableViewController:didTapAccessoryForItem:)])
+    if ([self.delegate respondsToSelector:@selector(easyTableViewController:didTapAccessoryForItem:)])
     {
-        [_delegate easyTableViewController:self didTapAccessoryForItem:obj];
+        [self.delegate easyTableViewController:self didTapAccessoryForItem:obj];
     }
 }
 
@@ -209,29 +189,28 @@
 {
     id obj = [self objectAtIndexPath:indexPath];
     
-    if ([_delegate respondsToSelector:@selector(easyTableViewController:didSelectItem:)])
+    if ([self.delegate respondsToSelector:@selector(easyTableViewController:didSelectItem:)])
     {
-        [_delegate easyTableViewController:self didSelectItem:obj];
+        [self.delegate easyTableViewController:self didSelectItem:obj];
     }
     
-    if (_autoDeselect)
+    if (self.autoDeselect)
     {
-        [self deselectSelectedRow];
+        [self ako_deselectCurrentlySelectedRow];
     }
 }
 
-#pragma mark -
-#pragma mark Private methods
+#pragma mark - Private methods
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_hasSections)
+    if (self.hasSections)
     {
-        NSDictionary *dict = [_dataSource objectAtIndex:indexPath.section];
+        NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.section];
         NSArray *values = [dict objectForKey:@"values"];
         return [values objectAtIndex:indexPath.row];
     }
-    return [_dataSource objectAtIndex:indexPath.row];
+    return [self.dataSource objectAtIndex:indexPath.row];
 }
 
 @end

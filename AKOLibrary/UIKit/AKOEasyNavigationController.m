@@ -86,10 +86,10 @@
 
 - (void)loadNextScreen
 {
-    if (_dataSequence != nil && [_dataSequence count] >= [self.viewControllers count])
+    if (self.dataSequence != nil && [self.dataSequence count] >= [self.viewControllers count])
     {
         NSInteger index = [self.viewControllers count] - 1;
-        NSDictionary *dict = [_dataSequence objectAtIndex:index];
+        NSDictionary *dict = [self.dataSequence objectAtIndex:index];
         UITableViewStyle style = (UITableViewStyle)[[dict objectForKey:@"style"] intValue];
         UITableViewCellAccessoryType accessory = (UITableViewCellAccessoryType)[[dict objectForKey:@"accessory"] intValue];
         CGFloat rowHeight = (CGFloat)[[dict objectForKey:@"rowHeight"] floatValue];

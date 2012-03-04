@@ -21,29 +21,49 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOEasyTableViewController.h
+ Includes the definition of the AKOEasyTableViewController class.
+ */
+
 #import <UIKit/UIKit.h>
 #import "AKOEasyTableViewControllerDelegate.h"
 
+/**
+ Complementary class used by the AKOEasyNavigationController class.
+ This class has a "dataSource" parameter, which once set will load
+ automatically any data in it in the table view.
+ */
 @interface AKOEasyTableViewController : UITableViewController 
-{
-@private
-    NSArray *_dataSource;
-    BOOL _hasSections;
-    BOOL _autoDeselect;
-    UITableViewCellAccessoryType _accessoryType;
-    CGFloat _rowHeight;
-    NSString *_dataSourceFileName;
 
-    id<AKOEasyTableViewControllerDelegate> _delegate;
-}
-
+/**
+ The data to display in the table.
+ */
 @property (nonatomic, retain) NSArray *dataSource;
-@property (nonatomic, assign) id delegate;
-@property (nonatomic) BOOL autoDeselect;
-@property (nonatomic) UITableViewCellAccessoryType accessoryType;
-@property (nonatomic) CGFloat rowHeight;
-@property (nonatomic, copy) NSString *dataSourceFileName;
 
-- (void)deselectSelectedRow;
+/**
+ The delegate of the current table.
+ */
+@property (nonatomic, assign) id<AKOEasyTableViewControllerDelegate> delegate;
+
+/**
+ Toggle specifying whether the selected item is deselected automatically.
+ */
+@property (nonatomic) BOOL autoDeselect;
+
+/**
+ The type of accessory applied to all cells of this table.
+ */
+@property (nonatomic) UITableViewCellAccessoryType accessoryType;
+
+/**
+ The height of the rows in this table.
+ */
+@property (nonatomic) CGFloat rowHeight;
+
+/**
+ The filename in the current bundle where the data is located.
+ */
+@property (nonatomic, copy) NSString *dataSourceFileName;
 
 @end

@@ -21,6 +21,12 @@
 //  OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/**
+ @file AKOEasyTableViewControllerDelegate.h
+ Includes the definition of the AKOEasyTableViewControllerDelegate protocol.
+ */
+
+
 #import <Foundation/Foundation.h>
 
 @class AKOEasyTableViewController;
@@ -28,9 +34,20 @@
 @protocol AKOEasyTableViewControllerDelegate <NSObject>
 
 @optional
+
+/**
+ Called when the user selects an item in the list.
+ @param controller The controller calling this method.
+ @param item The data item that corresponds to the cell touched.
+ */
 - (void)easyTableViewController:(AKOEasyTableViewController *)controller 
                   didSelectItem:(id)item;
 
+/**
+ Called when the user touches an accessory view on the list.
+ @param controller The controller calling this method.
+ @param item The data item that corresponds to the cell touched.
+ */
 - (void)easyTableViewController:(AKOEasyTableViewController *)controller 
          didTapAccessoryForItem:(id)item;
 
