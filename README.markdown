@@ -54,9 +54,9 @@ documentation.
 
 The AKOLibrary is bundled with a large suite of tests. 
 
-To run the tests, select the `"Universal_Framework | iOS Device"` scheme,
-and select  the "Product / Test" menu entry. This will launch the iPhone
-Simulator app, and then run the tests.
+To run the tests, select the `"Universal_Framework | iOS Device"`
+scheme, and select  the "Product / Test" menu entry. This will launch
+the iPhone Simulator app, and then run the tests.
 
 To see the test results, open the console in Xcode 4.
 
@@ -69,8 +69,8 @@ To add more functionality in the AKOLibrary, follow these steps:
 - Alternatively, you can add or create new classes in a pre-existing
   group or folder.
 - Add any new files to the "AKOLibrary" target.
-- Build using the `"Universal_Framework"` scheme and make sure everything
-  works.
+- Build using the `"Universal_Framework"` scheme and make sure
+  everything works.
 - Run the tests.
 - Add a new header file for the group (if required), similar to the
   files `"AKOLibrary_Video.h"`.
@@ -99,7 +99,7 @@ To use the library in a project, follow these steps:
   Phases" tab. Add the following frameworks in your project: MapKit,
   MediaPlayer, AudioToolbox, CoreData, CoreGraphics, CoreText,
   Foundation, QuartzCore, SystemConfiguration, UIKit, CFNetwork. 
-- In the "Build Settings" tab, select the "Other Linker Flags" entry and 
+- In the "Build Settings" tab, select the "Other Linker Flags" entry and
   add the `"-all_load"` flag.
 - In your source files, use the `#import <AKOLibrary/AKOLibrary.h>`
   header.
