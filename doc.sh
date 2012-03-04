@@ -15,7 +15,7 @@ rm -r Documentation
 # Generate the documentation
 # (this assumes that the Doxygen app is installed 
 # in the Applications folder in the Mac)
-/Applications/Doxygen.app/Contents/Resources/doxygen
+doxygen
 
 # Generate the PDF file from the LaTeX documentation
 cd Documentation/latex
