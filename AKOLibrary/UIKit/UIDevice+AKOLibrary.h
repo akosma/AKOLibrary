@@ -45,4 +45,9 @@
  */
 - (NSString *)ako_platformString;
 
+/**
+ Returns a boolean specifying whether the application is running on an iPad or not.
+ */
++ (BOOL)ako_runningInIPad;
+
 @end

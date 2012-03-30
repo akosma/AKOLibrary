@@ -25,13 +25,13 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
-// This code was adapted from
-// http://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
 
 @implementation UIDevice (AKOLibrary)
 
 - (NSString *)ako_platform
 {
+    // This code was adapted from
+    // http://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -43,6 +43,8 @@
 
 - (NSString *)ako_platformString
 {
+    // This code was adapted from
+    // http://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
     NSString *platform = [self ako_platform];
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
@@ -60,9 +62,26 @@
     if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
     if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
     if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
+    if ([platform isEqualToString:@"iPad3,1"])      return @"iPad-3G (WiFi)";
+    if ([platform isEqualToString:@"iPad3,2"])      return @"iPad-3G (4G)";
+    if ([platform isEqualToString:@"iPad3,3"])      return @"iPad-3G (4G)";
     if ([platform isEqualToString:@"i386"])         return @"Simulator";
     if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
     return platform;
+}
+
++ (BOOL)ako_runningInIPad
+{
+    // Adapted from
+    // http://iPhoneDeveloperTips.com/device/check-if-app-is-running-on-an-ipad.html
+    BOOL iPadDevice = NO;
+    
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)])
+    {
+        iPadDevice = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad);
+    }
+    
+    return iPadDevice;
 }
 
 @end
