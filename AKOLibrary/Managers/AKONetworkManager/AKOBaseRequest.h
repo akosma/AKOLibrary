@@ -27,6 +27,8 @@ extern NSTimeInterval const AKOBaseRequestTimeout;
 
 @interface AKOBaseRequest : AFHTTPRequestOperation 
 
+- (id)initWithURL:(NSURL *)newURL;
+
 - (void)handleResponse;
 - (NSString *)responseDescription;
 
