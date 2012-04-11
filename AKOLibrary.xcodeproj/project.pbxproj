@@ -29,6 +29,8 @@
 		3A2BC92613855EE100B87225 /* SoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2BC92413855EE100B87225 /* SoundEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A2BC92713855EE100B87225 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BC92513855EE100B87225 /* SoundEffect.m */; };
 		3A2BC92A13855EF200B87225 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2BC92913855EF200B87225 /* AudioToolbox.framework */; };
+		3A3C9808153578B8007884DD /* NSFetchedResultsController+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3C9806153578B8007884DD /* NSFetchedResultsController+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A3C9809153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C9807153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m */; };
 		3A3EB307138109E900FD02C4 /* AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2B8138109E900FD02C4 /* AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB308138109E900FD02C4 /* AKOLibrary_CoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3EB309138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,7 +104,6 @@
 		3A3EB3C613810A7F00FD02C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BC13810A7F00FD02C4 /* QuartzCore.framework */; };
 		3A4F669B1382A02E000CA869 /* UIColor+AKOLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F66991382A02E000CA869 /* UIColor+AKOLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A4F669C1382A02E000CA869 /* UIColor+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F669A1382A02E000CA869 /* UIColor+AKOLibrary.m */; };
-		3A60091D142374E6003B5B43 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 3A60091C142374E6003B5B43 /* README.markdown */; };
 		3A709CD213811B0800F091F5 /* AKOCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A709CD113811B0800F091F5 /* AKOCoreDataTests.m */; };
 		3A709CF313811D5400F091F5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
 		3A709CF413811D5700F091F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B713810A7F00FD02C4 /* CoreData.framework */; };
@@ -131,46 +132,46 @@
 		3A94AA571381AA000079E5A4 /* AKOCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94AA511381AA000079E5A4 /* AKOCircleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A94AA581381AA000079E5A4 /* AKOCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94AA521381AA000079E5A4 /* AKOCircleView.m */; };
 		3AA49431150392D600D4A67A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3B613810A7F00FD02C4 /* CFNetwork.framework */; };
-		3AA494371503935E00D4A67A /* LoggerClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494341503935E00D4A67A /* LoggerClient.h */; };
+		3AA494371503935E00D4A67A /* LoggerClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494341503935E00D4A67A /* LoggerClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA494381503935E00D4A67A /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA494351503935E00D4A67A /* LoggerClient.m */; };
-		3AA494391503935E00D4A67A /* LoggerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494361503935E00D4A67A /* LoggerCommon.h */; };
+		3AA494391503935E00D4A67A /* LoggerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA494361503935E00D4A67A /* LoggerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAB417013866A8E00368CB4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAB416F13866A8E00368CB4 /* MediaPlayer.framework */; };
 		3AAB418F13866BEB00368CB4 /* AKOFullScreenVideoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB418D13866BEB00368CB4 /* AKOFullScreenVideoController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAB419013866BEB00368CB4 /* AKOFullScreenVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB418E13866BEB00368CB4 /* AKOFullScreenVideoController.m */; };
 		3AAB419213866BF600368CB4 /* AKOLibrary_Video.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAB419113866BF600368CB4 /* AKOLibrary_Video.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DA1503527400FF5F0F /* TBXML.h */; };
+		3ACFD7DC1503527400FF5F0F /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DA1503527400FF5F0F /* TBXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7DD1503527400FF5F0F /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7DB1503527400FF5F0F /* TBXML.m */; };
-		3ACFD7E81503539900FF5F0F /* NSError+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DF1503539900FF5F0F /* NSError+Extensions.h */; };
+		3ACFD7E81503539900FF5F0F /* NSError+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7DF1503539900FF5F0F /* NSError+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7E91503539900FF5F0F /* NSError+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E01503539900FF5F0F /* NSError+Extensions.m */; };
-		3ACFD7EA1503539900FF5F0F /* NXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E11503539900FF5F0F /* NXDebug.h */; };
+		3ACFD7EA1503539900FF5F0F /* NXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E11503539900FF5F0F /* NXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7EB1503539900FF5F0F /* NXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E21503539900FF5F0F /* NXDebug.m */; };
-		3ACFD7EC1503539900FF5F0F /* NXJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E31503539900FF5F0F /* NXJsonParser.h */; };
+		3ACFD7EC1503539900FF5F0F /* NXJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E31503539900FF5F0F /* NXJsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7ED1503539900FF5F0F /* NXJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E41503539900FF5F0F /* NXJsonParser.m */; };
-		3ACFD7EE1503539900FF5F0F /* NXJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E51503539900FF5F0F /* NXJsonSerializer.h */; };
+		3ACFD7EE1503539900FF5F0F /* NXJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E51503539900FF5F0F /* NXJsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD7EF1503539900FF5F0F /* NXJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7E61503539900FF5F0F /* NXJsonSerializer.m */; };
-		3ACFD7F01503539900FF5F0F /* NXSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E71503539900FF5F0F /* NXSerializable.h */; };
-		3ACFD807150356DF00FF5F0F /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F2150356DF00FF5F0F /* AFHTTPClient.h */; };
+		3ACFD7F01503539900FF5F0F /* NXSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7E71503539900FF5F0F /* NXSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ACFD807150356DF00FF5F0F /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F2150356DF00FF5F0F /* AFHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD808150356DF00FF5F0F /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7F3150356DF00FF5F0F /* AFHTTPClient.m */; };
-		3ACFD809150356DF00FF5F0F /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F4150356DF00FF5F0F /* AFHTTPRequestOperation.h */; };
+		3ACFD809150356DF00FF5F0F /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F4150356DF00FF5F0F /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD80A150356DF00FF5F0F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7F5150356DF00FF5F0F /* AFHTTPRequestOperation.m */; };
-		3ACFD80B150356DF00FF5F0F /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F6150356DF00FF5F0F /* AFImageRequestOperation.h */; };
+		3ACFD80B150356DF00FF5F0F /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F6150356DF00FF5F0F /* AFImageRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD80C150356DF00FF5F0F /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7F7150356DF00FF5F0F /* AFImageRequestOperation.m */; };
-		3ACFD80D150356DF00FF5F0F /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F8150356DF00FF5F0F /* AFJSONRequestOperation.h */; };
+		3ACFD80D150356DF00FF5F0F /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7F8150356DF00FF5F0F /* AFJSONRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD80E150356DF00FF5F0F /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7F9150356DF00FF5F0F /* AFJSONRequestOperation.m */; };
-		3ACFD80F150356DF00FF5F0F /* AFJSONUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FA150356DF00FF5F0F /* AFJSONUtilities.h */; };
+		3ACFD80F150356DF00FF5F0F /* AFJSONUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FA150356DF00FF5F0F /* AFJSONUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD810150356DF00FF5F0F /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7FB150356DF00FF5F0F /* AFJSONUtilities.m */; };
-		3ACFD811150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FC150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.h */; };
+		3ACFD811150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FC150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD812150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD7FD150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.m */; };
-		3ACFD813150356DF00FF5F0F /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FE150356DF00FF5F0F /* AFNetworking.h */; };
-		3ACFD814150356DF00FF5F0F /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FF150356DF00FF5F0F /* AFPropertyListRequestOperation.h */; };
+		3ACFD813150356DF00FF5F0F /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FE150356DF00FF5F0F /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ACFD814150356DF00FF5F0F /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD7FF150356DF00FF5F0F /* AFPropertyListRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD815150356DF00FF5F0F /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD800150356DF00FF5F0F /* AFPropertyListRequestOperation.m */; };
-		3ACFD816150356DF00FF5F0F /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD801150356DF00FF5F0F /* AFURLConnectionOperation.h */; };
+		3ACFD816150356DF00FF5F0F /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD801150356DF00FF5F0F /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD817150356DF00FF5F0F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD802150356DF00FF5F0F /* AFURLConnectionOperation.m */; };
-		3ACFD818150356DF00FF5F0F /* AFXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD803150356DF00FF5F0F /* AFXMLRequestOperation.h */; };
+		3ACFD818150356DF00FF5F0F /* AFXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD803150356DF00FF5F0F /* AFXMLRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD819150356DF00FF5F0F /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD804150356DF00FF5F0F /* AFXMLRequestOperation.m */; };
-		3ACFD81A150356DF00FF5F0F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD805150356DF00FF5F0F /* UIImageView+AFNetworking.h */; };
+		3ACFD81A150356DF00FF5F0F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD805150356DF00FF5F0F /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD81B150356DF00FF5F0F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD806150356DF00FF5F0F /* UIImageView+AFNetworking.m */; };
-		3ACFD8231503583E00FF5F0F /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD8211503583E00FF5F0F /* Reachability.h */; };
+		3ACFD8231503583E00FF5F0F /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACFD8211503583E00FF5F0F /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ACFD8241503583E00FF5F0F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD8221503583E00FF5F0F /* Reachability.m */; };
 		3ACFD8251503585900FF5F0F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3EB3BE13810A7F00FD02C4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -184,6 +185,8 @@
 		3A2BC92413855EE100B87225 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
 		3A2BC92513855EE100B87225 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		3A2BC92913855EF200B87225 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3A3C9806153578B8007884DD /* NSFetchedResultsController+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+AKOLibrary.h"; sourceTree = "<group>"; };
+		3A3C9807153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+AKOLibrary.m"; sourceTree = "<group>"; };
 		3A3EB2B8138109E900FD02C4 /* AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary.h; sourceTree = "<group>"; };
 		3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOLibrary_CoreData.h; sourceTree = "<group>"; };
 		3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+AKOLibrary.h"; sourceTree = "<group>"; };
@@ -395,6 +398,8 @@
 				3A3EB2BA138109E900FD02C4 /* AKOLibrary_CoreData.h */,
 				3A3EB2BB138109E900FD02C4 /* NSFetchRequest+AKOLibrary.h */,
 				3A3EB2BC138109E900FD02C4 /* NSFetchRequest+AKOLibrary.m */,
+				3A3C9806153578B8007884DD /* NSFetchedResultsController+AKOLibrary.h */,
+				3A3C9807153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -779,8 +784,8 @@
 				3ACFD7EE1503539900FF5F0F /* NXJsonSerializer.h in Headers */,
 				3ACFD7F01503539900FF5F0F /* NXSerializable.h in Headers */,
 				3ACFD807150356DF00FF5F0F /* AFHTTPClient.h in Headers */,
-				3ACFD809150356DF00FF5F0F /* AFHTTPRequestOperation.h in Headers */,
 				3ACFD80B150356DF00FF5F0F /* AFImageRequestOperation.h in Headers */,
+				3ACFD809150356DF00FF5F0F /* AFHTTPRequestOperation.h in Headers */,
 				3ACFD80D150356DF00FF5F0F /* AFJSONRequestOperation.h in Headers */,
 				3ACFD80F150356DF00FF5F0F /* AFJSONUtilities.h in Headers */,
 				3ACFD811150356DF00FF5F0F /* AFNetworkActivityIndicatorManager.h in Headers */,
@@ -792,6 +797,7 @@
 				3ACFD8231503583E00FF5F0F /* Reachability.h in Headers */,
 				3AA494371503935E00D4A67A /* LoggerClient.h in Headers */,
 				3AA494391503935E00D4A67A /* LoggerCommon.h in Headers */,
+				3A3C9808153578B8007884DD /* NSFetchedResultsController+AKOLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,7 +880,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A60091D142374E6003B5B43 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1003,7 @@
 				3ACFD81B150356DF00FF5F0F /* UIImageView+AFNetworking.m in Sources */,
 				3ACFD8241503583E00FF5F0F /* Reachability.m in Sources */,
 				3AA494381503935E00D4A67A /* LoggerClient.m in Sources */,
+				3A3C9809153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
