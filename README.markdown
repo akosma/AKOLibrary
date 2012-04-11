@@ -27,8 +27,17 @@ Install [Doxygen](http://doxygen.org/) using
 ### Build binaries and documentation
 
 Open the AKOLibrary.xcodeproj file with Xcode 4.0.2, select the
-"Universal_Framework | iOS Device" scheme, and select the "Product /
-Build" menu entry. The solution should compile without problems.
+"Universal_Framework | iOS Device" scheme, and select the following menu 
+entries in this order:
+
+1. "Product / Build For / Archiving"
+2. "Product / Archive"
+3. "Product / Build"
+
+The solution should compile without problems. To find the binary, right-click
+on the "Products / AKOLibrary.framework" item in the project hierarchy, and 
+select "Show in Finder". The final production binary is located in the
+"Products / Release-universal" folder.
 
 Documentation
 -------------
