@@ -891,7 +891,8 @@
 			currentAttributeBuffer = 0;
 		}
 	}
-	
+    
+    [super dealloc];
 }
 
 - (TBXMLElement*) nextAvailableElement {
