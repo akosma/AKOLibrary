@@ -27,3 +27,4 @@
  */
 
 #import "NSFetchRequest+AKOLibrary.h"
+#import "NSFetchedResultsController+AKOLibrary.h"
