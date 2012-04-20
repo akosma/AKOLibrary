@@ -56,4 +56,10 @@
  */
 + (AKOFileSystemManager *)sharedAKOFileSystemManager;
 
+/**
+ Removed the file with the path passed as parameter.
+ @param path An NSString with the path of the file to remove.
+ */
+- (void)removeFile:(NSString *)path;
+
 @end

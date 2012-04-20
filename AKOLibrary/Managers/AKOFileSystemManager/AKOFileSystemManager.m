@@ -97,4 +97,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AKOFileSystemManager)
     return tempPath;
 }
 
+- (void)removeFile:(NSString *)path
+{
+    [self.fileManager removeItemAtPath:path error:nil];
+}
+
 @end

@@ -51,4 +51,26 @@
     return nextIndexPath;
 }
 
+- (NSIndexPath *)ako_decrementIndexPath:(NSIndexPath *)oldIndexPath
+{
+    NSIndexPath *previousIndexPath = nil;
+        
+    NSInteger nextRow = oldIndexPath.row - 1;
+    NSInteger currentSection = oldIndexPath.section;
+    if (nextRow >= 0)
+    {
+        previousIndexPath = [NSIndexPath indexPathForRow:nextRow inSection:currentSection];
+    }
+    else
+    {
+        NSInteger nextSection = currentSection - 1;
+        if (nextSection >= 0)
+        {
+            previousIndexPath = [NSIndexPath indexPathForRow:0 inSection:nextSection];
+        }
+    }
+    
+    return previousIndexPath;
+}
+
 @end

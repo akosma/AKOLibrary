@@ -8,20 +8,58 @@
 
 #import "AKOCoreDataTests.h"
 #import "AKOLibrary_CoreData.h"
+#import "AKOLibrary_Managers.h"
+#import "AKOCoreDataTestParent.h"
+#import "AKOCoreDataTestChild.h"
+#import "AKOCoreDataTestManager.h"
+
+static NSInteger OBJECT_COUNT = 10;
+
+
+@interface AKOCoreDataTests ()
+
+@property (nonatomic, strong) AKOCoreDataTestManager *manager;
+@property (nonatomic, getter = isFirstRun) BOOL initialized;
+
+@end
+
 
 @implementation AKOCoreDataTests
+
+@synthesize manager = _manager;
+@synthesize initialized = _initialized;
 
 - (void)setUp
 {
     [super setUp];
+
+    self.manager = [AKOCoreDataTestManager sharedAKOCoreDataTestManager];
     
-    // Set-up code here.
+    if (!self.initialized)
+    {
+        self.initialized = YES;
+
+        [self.manager setPersistenceStoreForTesting];
+
+        // Insert OBJECT_COUNT parents, each with OBJECT_COUNT children
+        for (NSInteger index = 0; index < OBJECT_COUNT; ++index)
+        {
+            AKOCoreDataTestParent *parent = [self.manager createObjectOfType:@"AKOCoreDataTestParent"];
+            parent.name = [NSString stringWithFormat:@"Parent %d", index];
+            parent.date = [NSDate date];
+            for (NSInteger innerIndex = 0; innerIndex < OBJECT_COUNT; ++innerIndex)
+            {
+                AKOCoreDataTestChild *child = [self.manager createObjectOfType:@"AKOCoreDataTestChild"];
+                child.name = [NSString stringWithFormat:@"Child %d", innerIndex];
+                [parent addChildrenObject:child];
+            }
+        }
+        [self.manager save];
+    }
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
 }
 
@@ -69,6 +107,57 @@
         BOOL ascending = [descriptor ascending];
         STAssertFalse(ascending, @"Each sort descriptor should be descending");
     }
+}
+
+- (void)testIncrementIndexPath
+{
+    NSFetchRequest *request = [self.manager fetchRequestForType:@"AKOCoreDataTestParent"];
+    [request ako_sortAscending:YES withKeys:@"name", @"date", nil];
+    NSFetchedResultsController *controller = [self.manager resultsControllerForRequest:request groupedBy:@"name"];
+    [controller performFetch:nil];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    NSIndexPath *next = [controller ako_incrementIndexPath:indexPath];
+    STAssertEquals(next.row, 1, @"After incrementing, the row should be 1");
+    STAssertEquals(next.section, 0, @"After incrementing, the section should still be 0");
+}
+
+- (void)testCannotIncrementIndexPathAfterTheLast
+{
+    NSInteger last = OBJECT_COUNT - 1;
+    NSFetchRequest *request = [self.manager fetchRequestForType:@"AKOCoreDataTestParent"];
+    [request ako_sortAscending:YES withKeys:@"name", @"date", nil];
+    NSFetchedResultsController *controller = [self.manager resultsControllerForRequest:request groupedBy:@"name"];
+    [controller performFetch:nil];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:last inSection:last];
+    
+    NSIndexPath *next = [controller ako_incrementIndexPath:indexPath];
+    STAssertNil(next, @"Incrementing the last index path should return nil");
+}
+
+- (void)testDecrementIndexPath
+{
+    NSFetchRequest *request = [self.manager fetchRequestForType:@"AKOCoreDataTestParent"];
+    [request ako_sortAscending:YES withKeys:@"name", @"date", nil];
+    NSFetchedResultsController *controller = [self.manager resultsControllerForRequest:request groupedBy:@"name"];
+    [controller performFetch:nil];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    
+    NSIndexPath *next = [controller ako_decrementIndexPath:indexPath];
+    STAssertEquals(next.row, 0, @"After decrementing, the row should be 0");
+    STAssertEquals(next.section, 0, @"After decrementing, the section should still be 0");
+}
+
+- (void)testCannotDecrementIndexPathBeforeTheFirst
+{
+    NSFetchRequest *request = [self.manager fetchRequestForType:@"AKOCoreDataTestParent"];
+    [request ako_sortAscending:YES withKeys:@"name", @"date", nil];
+    NSFetchedResultsController *controller = [self.manager resultsControllerForRequest:request groupedBy:@"name"];
+    [controller performFetch:nil];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    NSIndexPath *next = [controller ako_decrementIndexPath:indexPath];
+    STAssertNil(next, @"Decrementing the first index path should return nil");
 }
 
 @end

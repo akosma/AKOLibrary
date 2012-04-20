@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AKOCoreDataTestChild" representedClassName="AKOCoreDataTestChild" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AKOCoreDataTestParent" inverseName="children" inverseEntity="AKOCoreDataTestParent" syncable="YES"/>
+    </entity>
+    <entity name="AKOCoreDataTestParent" representedClassName="AKOCoreDataTestParent" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AKOCoreDataTestChild" inverseName="parent" inverseEntity="AKOCoreDataTestChild" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AKOCoreDataTestParent" positionX="31473" positionY="-18648" width="146" height="90"/>
+        <element name="AKOCoreDataTestChild" positionX="31471" positionY="-18441" width="128" height="75"/>
+    </elements>
+</model>

@@ -23,8 +23,36 @@
 
 #import <CoreData/CoreData.h>
 
+/** 
+ @category NSFetchedResultsController(AKOLibrary) 
+ A category on NSFetchedResultsController
+ */
 @interface NSFetchedResultsController (AKOLibrary)
 
+/**
+ Returns the next NSIndexPath.
+ This method returns the next object to be displayed in a table view that
+ uses the current fetched results controller as data source. It is the
+ equivalent of incrementing the NSIndexPath by one unit, which might mean
+ incrementing the section if required. This method returns nil if the parameter
+ represents the last object on the current results controller.
+ @param oldIndexPath The index path to increment.
+ @return An NSIndexPath object, or nil if the parameter represented 
+ the last index path.
+ */
 - (NSIndexPath *)ako_incrementIndexPath:(NSIndexPath *)oldIndexPath;
+
+/**
+ Returns the previous NSIndexPath.
+ This method returns the prevoius object to be displayed in a table view that
+ uses the current fetched results controller as data source. It is the
+ equivalent of decrementing the NSIndexPath by one unit, which might mean
+ decrementing the section if required. This method returns nil if the parameter
+ represents the first object on the current results controller.
+ @param oldIndexPath The index path to decrement.
+ @return An NSIndexPath object, or nil if the parameter represented 
+ the first index path.
+ */
+- (NSIndexPath *)ako_decrementIndexPath:(NSIndexPath *)oldIndexPath;
 
 @end

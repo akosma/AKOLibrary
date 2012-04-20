@@ -63,7 +63,7 @@ documentation.
 
 The AKOLibrary is bundled with a large suite of tests. 
 
-To run the tests, select the `"Universal_Framework | iOS Device"`
+To run the tests, select the `"Universal_Framework | iPhone Simulator"`
 scheme, and select  the "Product / Test" menu entry. This will launch
 the iPhone Simulator app, and then run the tests.
 

@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3A111D3B1541509D00029B0F /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A111D391541509D00029B0F /* TestModel.xcdatamodeld */; };
+		3A111D3F154151E500029B0F /* AKOCoreDataTestParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A111D3E154151E500029B0F /* AKOCoreDataTestParent.m */; };
+		3A111D42154151E600029B0F /* AKOCoreDataTestChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A111D41154151E600029B0F /* AKOCoreDataTestChild.m */; };
+		3A111D431541523300029B0F /* NSFetchedResultsController+AKOLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C9807153578B8007884DD /* NSFetchedResultsController+AKOLibrary.m */; };
+		3A111D46154152B700029B0F /* AKOCoreDataTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A111D45154152B700029B0F /* AKOCoreDataTestManager.m */; };
+		3A111D4715415A2F00029B0F /* AKOCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2DB138109E900FD02C4 /* AKOCoreDataManager.m */; };
+		3A111D4815415A3300029B0F /* AKOFileSystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EB2DE138109E900FD02C4 /* AKOFileSystemManager.m */; };
 		3A1FF2EC138118CC00A94C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1FF2EA138118CC00A94C87 /* CoreGraphics.framework */; };
 		3A1FF2ED138118CC00A94C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1FF2EB138118CC00A94C87 /* UIKit.framework */; };
 		3A1FF30B1381192E00A94C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1FF2EB138118CC00A94C87 /* UIKit.framework */; };
@@ -177,6 +184,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A111D3A1541509D00029B0F /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		3A111D3D154151E500029B0F /* AKOCoreDataTestParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCoreDataTestParent.h; sourceTree = "<group>"; };
+		3A111D3E154151E500029B0F /* AKOCoreDataTestParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTestParent.m; sourceTree = "<group>"; };
+		3A111D40154151E600029B0F /* AKOCoreDataTestChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCoreDataTestChild.h; sourceTree = "<group>"; };
+		3A111D41154151E600029B0F /* AKOCoreDataTestChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTestChild.m; sourceTree = "<group>"; };
+		3A111D44154152B700029B0F /* AKOCoreDataTestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOCoreDataTestManager.h; sourceTree = "<group>"; };
+		3A111D45154152B700029B0F /* AKOCoreDataTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOCoreDataTestManager.m; sourceTree = "<group>"; };
 		3A1FF2EA138118CC00A94C87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A1FF2EB138118CC00A94C87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A1FF30A1381192E00A94C87 /* AKOLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKOLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +393,13 @@
 			children = (
 				3A1FF3101381192E00A94C87 /* AKOLibraryTests-Info.plist */,
 				3A1FF3141381192E00A94C87 /* AKOLibraryTests-Prefix.pch */,
+				3A111D391541509D00029B0F /* TestModel.xcdatamodeld */,
+				3A111D40154151E600029B0F /* AKOCoreDataTestChild.h */,
+				3A111D41154151E600029B0F /* AKOCoreDataTestChild.m */,
+				3A111D3D154151E500029B0F /* AKOCoreDataTestParent.h */,
+				3A111D3E154151E500029B0F /* AKOCoreDataTestParent.m */,
+				3A111D44154152B700029B0F /* AKOCoreDataTestManager.h */,
+				3A111D45154152B700029B0F /* AKOCoreDataTestManager.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -943,6 +964,13 @@
 				3A709D041381217E00F091F5 /* NSURL+AKOLibrary.m in Sources */,
 				3A709D051381219B00F091F5 /* AKOLibrary_Foundation_functions.m in Sources */,
 				3A709D06138122A400F091F5 /* AKOPreferencesManager.m in Sources */,
+				3A111D3B1541509D00029B0F /* TestModel.xcdatamodeld in Sources */,
+				3A111D3F154151E500029B0F /* AKOCoreDataTestParent.m in Sources */,
+				3A111D42154151E600029B0F /* AKOCoreDataTestChild.m in Sources */,
+				3A111D431541523300029B0F /* NSFetchedResultsController+AKOLibrary.m in Sources */,
+				3A111D46154152B700029B0F /* AKOCoreDataTestManager.m in Sources */,
+				3A111D4715415A2F00029B0F /* AKOCoreDataManager.m in Sources */,
+				3A111D4815415A3300029B0F /* AKOFileSystemManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,6 +1209,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A111D391541509D00029B0F /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A111D3A1541509D00029B0F /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 3A111D3A1541509D00029B0F /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A91D81E13808FC4006BBC46 /* Project object */;
 }

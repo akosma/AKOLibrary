@@ -29,6 +29,8 @@
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, strong) NSPersistentStore *store;
+@property (nonatomic, assign) NSString *storeType;
 
 @end
 
@@ -39,6 +41,8 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize store = _store;
+@synthesize storeType = _storeType;
 
 - (id)initWithFilename:(NSString *)name
 {
@@ -46,6 +50,7 @@
     if (self)
     {
         _fileName = [name copy];
+        _storeType = NSSQLiteStoreType;
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(objectChanged:) 
                                                      name:NSManagedObjectContextDidSaveNotification
@@ -61,6 +66,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_store release];
     [_fileName release];
 
     [super dealloc];
@@ -128,6 +134,25 @@
     return controller;
 }
 
+- (NSFetchedResultsController *)resultsControllerForRequest:(NSFetchRequest *)fetchRequest groupedBy:(NSString *)key
+{
+    NSFetchedResultsController *controller = [[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                  managedObjectContext:self.managedObjectContext 
+                                                                                    sectionNameKeyPath:key
+                                                                                             cacheName:@"Root"] autorelease];
+    return controller;
+}
+
+- (void)setPersistenceStoreForTesting
+{
+    // Idea taken from
+    // http://iamleeg.blogspot.com/2010/01/unit-testing-core-data-driven-apps-fit.html
+    if (_persistentStoreCoordinator == nil)
+    {
+        _storeType = NSInMemoryStoreType;
+    }
+}
+
 #pragma mark - NSNotification handlers
 
 - (void)objectChanged:(NSNotification *)notification
@@ -193,8 +218,13 @@
     
     NSAssert(self.fileName, @"The fileName ivar cannot be nil");
 
-    NSString *modelPath = [[NSBundle mainBundle] pathForResource:self.fileName
-                                                          ofType:@"momd"];
+    // Instead of using [NSBundle mainBundle] we use this code
+    // which works not only on the compiled application, but also 
+    // when running unit tests.
+    // http://stackoverflow.com/questions/3067015/ocunit-nsbundle
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *modelPath = [bundle pathForResource:self.fileName
+                                           ofType:@"momd"];
     NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return _managedObjectModel;
@@ -222,11 +252,12 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
-                                                   configuration:nil
-                                                             URL:storeURL 
-                                                         options:options
-                                                           error:&error]) 
+    self.store = [_persistentStoreCoordinator addPersistentStoreWithType:self.storeType 
+                                                           configuration:nil
+                                                                     URL:storeURL 
+                                                                 options:options
+                                                                   error:&error];
+    if (self.store == nil) 
     {
         abort();
     }    

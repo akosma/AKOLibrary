@@ -95,6 +95,16 @@
 - (NSFetchedResultsController *)resultsControllerForRequest:(NSFetchRequest *)fetchRequest;
 
 /**
+ Returns a fetched results controller for the fetch request passed as parameter.
+ Returns a fetched results controller that can be used to
+ drive the contents of a table view. This method returns a grouped controller.
+ @param fetchRequest The fetch request that will be used as a basis for the contents.
+ @param key They KVC key of the field with which the results will be grouped.
+ @return An autoreleased fetched results controller.
+ */
+- (NSFetchedResultsController *)resultsControllerForRequest:(NSFetchRequest *)fetchRequest groupedBy:(NSString *)key;
+
+/**
  Callback method to initialize objects when they are inserted.
  This method can be overridden by subclasses to perform individual
  initialization of object when they are inserted in the managed context.
@@ -114,5 +124,13 @@
  operations on an object when they are deleted from the managed context.
  */
 - (void)objectDeleted:(NSManagedObject *)object;
+
+/**
+ Sets the storage type to "memory"
+ This method is used in unit tests, to avoid having a physical repository being
+ created on disk. It must be called before performing any CRUD operations that
+ require the managed object context, otherwise it will be ignored.
+ */
+- (void)setPersistenceStoreForTesting;
 
 @end
