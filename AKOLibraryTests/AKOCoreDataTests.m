@@ -143,9 +143,9 @@ static NSInteger OBJECT_COUNT = 10;
     [controller performFetch:nil];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     
-    NSIndexPath *next = [controller ako_decrementIndexPath:indexPath];
-    STAssertEquals(next.row, 0, @"After decrementing, the row should be 0");
-    STAssertEquals(next.section, 0, @"After decrementing, the section should still be 0");
+    NSIndexPath *previous = [controller ako_decrementIndexPath:indexPath];
+    STAssertEquals(previous.row, 0, @"After decrementing, the row should be 0");
+    STAssertEquals(previous.section, 0, @"After decrementing, the section should still be 0");
 }
 
 - (void)testCannotDecrementIndexPathBeforeTheFirst
@@ -156,8 +156,8 @@ static NSInteger OBJECT_COUNT = 10;
     [controller performFetch:nil];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    NSIndexPath *next = [controller ako_decrementIndexPath:indexPath];
-    STAssertNil(next, @"Decrementing the first index path should return nil");
+    NSIndexPath *previous = [controller ako_decrementIndexPath:indexPath];
+    STAssertNil(previous, @"Decrementing the first index path should return nil");
 }
 
 @end
