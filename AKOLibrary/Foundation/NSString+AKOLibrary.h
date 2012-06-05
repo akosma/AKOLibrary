@@ -103,4 +103,10 @@
  */
 - (NSString *)ako_URLDecode;
 
+/**
+ Removes all XML and HTML tags from the current instance.
+ @return A string without XML or HTML tasg
+ */
+- (NSString *)ako_stringByStrippingHTML;
+
 @end

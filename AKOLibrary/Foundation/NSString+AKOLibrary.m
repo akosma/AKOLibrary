@@ -142,4 +142,17 @@
     return [(NSString *)cleanString autorelease];
 }
 
+- (NSString *)ako_stringByStrippingHTML 
+{
+    // Adapted from
+    // http://stackoverflow.com/a/4886998/133764
+    NSRange r;
+    NSString *s = [[self copy] autorelease];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) 
+    {
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    }
+    return s; 
+}
+
 @end
