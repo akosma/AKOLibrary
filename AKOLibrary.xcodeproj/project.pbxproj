@@ -868,7 +868,7 @@
 		3A91D81E13808FC4006BBC46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 3A91D82113808FC4006BBC46 /* Build configuration list for PBXProject "AKOLibrary" */;
 			compatibilityVersion = "Xcode 3.2";
